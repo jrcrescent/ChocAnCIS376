@@ -29,7 +29,33 @@ public class ChocAn {
     private static PrintWriter printWr; //writes to output file(s)
          
     public static void readProviderDirectoryInputFile(){
-        //TO BE ADDED
+        try{
+            scan = new Scanner(new File(PROVIDER_DIR_INPUT_FILE_NAME));
+            
+            while(scan.hasNext()){
+                //tempLine = a single line from the provider dir input file
+                String tempLine = scan.nextLine();
+                
+                /*Splits the line into tokens:
+                  tokenizedLine[0] = session name
+                  tokenizedLine[1] = service code
+                  tokenizedLine[2] = fee */
+                String[] tokenizedLine = tempLine.split(",");
+                
+                //creating a temporary Session object 
+                Session tempSession = new Session();
+                
+                //initializes all data fields of the temp object
+                tempSession.setSessionName(tokenizedLine[0]);
+                tempSession.setServiceCode(tokenizedLine[1]);
+                tempSession.setFee(Double.parseDouble(tokenizedLine[2]));
+                
+                providerDirectory.add(tempSession); //add session to ArrayList
+            }
+        }//end try
+        catch(FileNotFoundException e){
+            //maybe a label within the GUI saying: ("Error: Input file " + MEMBERS_INPUT_FILE_NAME + " not found.")
+        }
     }//end readInputFiles()
     
     public static void readProvidersInputFile(){
