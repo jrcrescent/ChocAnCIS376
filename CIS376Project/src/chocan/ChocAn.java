@@ -165,4 +165,42 @@ public class ChocAn {
         return status;
     }//end verifyMemberIDNumber()
     
+    /** returns name of session from code
+     * @param serviceCode a session's code
+     * @return a String:
+     * name of session if valid
+     * or error message if not valid
+     */   
+    public static String getSessionNameFromCode(String serviceCode)
+    {
+        String name = "Code is not valid";
+        String regex = "\\d+";
+        
+        if (serviceCode.matches(regex))
+        {
+            for(int i = 0; i < providerDirectory.size(); i++)
+            {  
+                if (providerDirectory.get(i).getServiceCode().equals(serviceCode))
+                {
+                    name = providerDirectory.get(i).getSessionName();
+                    break;
+                }//end if
+                
+                name = "Code does not exist.";
+            }//end for
+        } //end if       
+        
+        return name;
+    } //end getSessionNameFromCode
+    
+    public static void test()
+    {    
+        
+  
+        System.out.println(getSessionNameFromCode("883948"));
+        System.out.println(getSessionNameFromCode("fhd"));
+        System.out.println(getSessionNameFromCode("235653"));
+
+    }
+    
 }//end ChocAn class
