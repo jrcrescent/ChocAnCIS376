@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import java.time.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 
 public class ChocoProviderMMController implements Initializable {
 
@@ -25,6 +26,10 @@ public class ChocoProviderMMController implements Initializable {
     private Button EnterOfDate;
     @FXML
     private Label VMemberLabel;
+    @FXML
+    private TableView ServiceTable;
+    @FXML
+    private TextField ServiceCode;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
@@ -35,24 +40,28 @@ public class ChocoProviderMMController implements Initializable {
         String memberStatus;
         memberStatus=chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText());
         System.out.println(memberStatus);
-        if(memberStatus=="v"){
+        if(memberStatus.equals("Validated")){
             MemberID.setDisable(false);
             ServiceDate.setDisable(false);
             EnterOfDate.setDisable(false);  
-            VMemberLabel.setText("Valid");
-        } else if(memberStatus=="Error! ID should be 9 characters long!"){
+            VMemberLabel.setText("Validated");
+        } else{
             MemberID.setDisable(true);
             ServiceDate.setDisable(true);
             EnterOfDate.setDisable(true);
             VMemberLabel.setText(memberStatus);
-        } else if(memberStatus=="i"){
-            
         }
     }
 
     @FXML
-    private void handleMemberVerificationButtonAction(ActionEvent event){
-            
+    private void handleVerificationAction(ActionEvent event){
+        
+        if(MemberID.getText().equals(VerifyMemberID.getText())){
+            ServiceTable.setDisable(false);
+        }else{
+            ServiceTable.setDisable(true);  
+        }
+        
     }
     @FXML
     private void handleServicCodeButtonAction(ActionEvent event){

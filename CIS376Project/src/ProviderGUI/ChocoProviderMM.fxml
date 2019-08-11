@@ -34,7 +34,7 @@
       </AnchorPane>
       <AnchorPane fx:id="ProviderAnchorPane" layoutX="38.0" layoutY="229.0" prefHeight="533.0" prefWidth="558.0" style="-fx-background-color: c0f0c0;">
          <children>
-            <TableView disable="true" layoutY="55.0" prefHeight="216.0" prefWidth="558.0">
+            <TableView fx:id="ServiceTable" disable="true" layoutY="55.0" prefHeight="216.0" prefWidth="558.0">
               <columns>
                 <TableColumn prefWidth="169.0" text="C1" />
                 <TableColumn minWidth="0.0" prefWidth="201.0" text="C2" />
@@ -43,7 +43,7 @@
             </TableView>
             <TextField disable="true" layoutX="190.0" layoutY="306.0" />
             <Button disable="true" layoutX="339.0" layoutY="306.0" mnemonicParsing="false" text="Enter" />
-            <TextField fx:id="MemberID" disable="true" layoutX="82.0" layoutY="18.0" text="123456789" />
+            <TextField fx:id="MemberID" disable="true" layoutX="82.0" layoutY="18.0" promptText="123456789" />
             <Label layoutX="14.0" layoutY="22.0" prefHeight="17.0" prefWidth="68.0" text="Member ID:">
                <font>
                   <Font name="Times New Roman" size="12.0" />
@@ -61,11 +61,11 @@
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="EnterOfDate" disable="true" layoutX="474.0" layoutY="18.0" mnemonicParsing="false" text="Enter" />
             <TextField fx:id="ServiceDate" disable="true" layoutX="325.0" layoutY="18.0" promptText="MM/DD/YYYY" />
             <Label layoutX="249.0" layoutY="22.0" prefHeight="17.0" prefWidth="74.0" text="Service Date:" />
             <Label layoutX="117.0" layoutY="310.0" text="Service Code:" />
             <Label layoutX="40.0" layoutY="382.0" text="Comments:" />
+            <Button fx:id="EnterOfDate" disable="true" layoutX="474.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleVerificationAction" text="Enter" />
          </children>
       </AnchorPane>
    </children>

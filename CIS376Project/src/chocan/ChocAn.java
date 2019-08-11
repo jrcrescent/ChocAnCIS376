@@ -27,16 +27,7 @@ public class ChocAn {
     
     private static Scanner scan;        //to read input file(s)
     private static PrintWriter printWr; //writes to output file(s)
-     
-    public static void main(String[] args) throws FileNotFoundException {
-        readProviderDirectoryInputFile();
-        readProvidersInputFile();
-        readMembersInputFile();
-        
-        String memID = "777888999";
-        System.out.println(verifyMemberIDNumber(memID));
-    }//end main
-    
+         
     public static void readProviderDirectoryInputFile(){
         //TO BE ADDED
     }//end readInputFiles()
@@ -93,7 +84,7 @@ public class ChocAn {
         
         //checking if entered ID is 9 characters long. 
         if(memberIDnumber.length() != 9){
-            status = "Error! ID should be 9 characters long!";
+            status = "Error! ID should be 9 integers long!";
         }
         
         //checking if entered ID is composed of numbers only. 
