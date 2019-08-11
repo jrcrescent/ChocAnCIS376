@@ -30,9 +30,10 @@ public class CIS376Project extends Application {
         readProviderDirectoryInputFile();
         readProvidersInputFile();
         readMembersInputFile();
-      //  launch(args);
-        
+        //launch(args);
         test();
+        
+       
     }
     
 }
