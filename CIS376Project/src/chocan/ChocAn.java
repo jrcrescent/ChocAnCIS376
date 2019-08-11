@@ -27,7 +27,7 @@ public class ChocAn {
     
     private static Scanner scan;        //to read input file(s)
     private static PrintWriter printWr; //writes to output file(s)
-         
+     
     public static void readProviderDirectoryInputFile(){
         try{
             scan = new Scanner(new File(PROVIDER_DIR_INPUT_FILE_NAME));
@@ -56,10 +56,41 @@ public class ChocAn {
         catch(FileNotFoundException e){
             //maybe a label within the GUI saying: ("Error: Input file " + MEMBERS_INPUT_FILE_NAME + " not found.")
         }
-    }//end readInputFiles()
+    }//end readProviderDirectoryInputFile()
     
     public static void readProvidersInputFile(){
-        //TO BE ADDED
+        try{
+            scan = new Scanner(new File(PROVIDERS_INPUT_FILE_NAME));
+            
+            while(scan.hasNext()){
+                //tempLine = a single line from the member's input file
+                String tempLine = scan.nextLine();
+                
+                /*Splits the line into tokens:
+                  tokenizedLine[0] = provider name
+                  tokenizedLine[1] = provider ID number
+                  tokenizedLine[2] = street address
+                  ...
+                  tokenizedLine[5] = zip code */
+                String[] tokenizedLine = tempLine.split(",");
+                
+                //creating a temp ProviderRecord object
+                ProviderRecord tempRecord = new ProviderRecord();
+                
+                //initializes all data fields of the tempRecord object
+                tempRecord.setProviderName(tokenizedLine[0]);
+                tempRecord.setProviderIDnumber(tokenizedLine[1]);
+                tempRecord.setStreetAddress(tokenizedLine[2]);
+                tempRecord.setCity(tokenizedLine[3]);
+                tempRecord.setState(tokenizedLine[4]);
+                tempRecord.setZipCode(tokenizedLine[5]);
+                
+                providerRecords.add(tempRecord); //add given member record
+            }
+        }
+        catch(FileNotFoundException e) {
+            //maybe a label within the GUI saying: ("Error: Input file " + MEMBERS_INPUT_FILE_NAME + " not found.")
+        }
     }//end readProvidersInputFile()
     
     /**Reads input file containing members' info and stores all data locally.*/
