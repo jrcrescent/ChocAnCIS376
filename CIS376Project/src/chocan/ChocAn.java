@@ -246,7 +246,5 @@ public class ChocAn {
         return status;
     }//end verifyMemberIDNumber()
 
-    public static void test() {
-        System.out.print(verifyProviderIDNumber("gfd234"));
-    }
+    
 }//end ChocAn class
