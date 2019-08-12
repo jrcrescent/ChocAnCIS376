@@ -10,14 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class CIS376Project extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("/ProviderGUI/ChocoMemberID.fxml"));
-        
+
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
@@ -30,10 +29,8 @@ public class CIS376Project extends Application {
         readProviderDirectoryInputFile();
         readProvidersInputFile();
         readMembersInputFile();
-        //launch(args);
-        test();
-        
-       
+        launch(args);        
+
     }
-    
+
 }
