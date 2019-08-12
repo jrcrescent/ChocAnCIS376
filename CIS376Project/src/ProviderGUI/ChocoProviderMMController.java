@@ -1,5 +1,6 @@
 package ProviderGUI;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -9,8 +10,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import java.time.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class ChocoProviderMMController implements Initializable {
 
@@ -30,6 +39,12 @@ public class ChocoProviderMMController implements Initializable {
     private TableView ServiceTable;
     @FXML
     private TextField ServiceCode;
+    @FXML
+    private Button VServiceButton;
+    @FXML
+    private Button VServiceYes;
+    @FXML
+    private Button VserviceNo;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
@@ -37,10 +52,8 @@ public class ChocoProviderMMController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        String memberStatus;
-        memberStatus=chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText());
-        System.out.println(memberStatus);
-        if(memberStatus.equals("Validated")){
+
+        if(chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText()).equals("Validated")){
             MemberID.setDisable(false);
             ServiceDate.setDisable(false);
             EnterOfDate.setDisable(false);  
@@ -49,7 +62,7 @@ public class ChocoProviderMMController implements Initializable {
             MemberID.setDisable(true);
             ServiceDate.setDisable(true);
             EnterOfDate.setDisable(true);
-            VMemberLabel.setText(memberStatus);
+            VMemberLabel.setText(chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText()));
         }
     }
 
@@ -58,14 +71,35 @@ public class ChocoProviderMMController implements Initializable {
         
         if(MemberID.getText().equals(VerifyMemberID.getText())){
             ServiceTable.setDisable(false);
+            ServiceCode.setDisable(false);
+            VServiceButton.setDisable(false);
         }else{
-            ServiceTable.setDisable(true);  
+            ServiceTable.setDisable(true); 
+            ServiceCode.setDisable(true);
+            VServiceButton.setDisable(true);
         }
         
     }
     @FXML
-    private void handleServicCodeButtonAction(ActionEvent event){
+    private void handleSCodeBAction(ActionEvent event){ 
+        try {
+        Stage stage;
+        Parent root;
+            if(event.getSource()==VServiceButton){
+                stage=new Stage();
+                root=FXMLLoader.load(getClass().getResource("VerificationServiceName.fxml"));
+                stage.setScene(new Scene(root));
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.initOwner(VServiceButton.getScene().getWindow());
+                stage.showAndWait();
+            
+            }else{
+            stage=(Stage) VServiceYes.getScene().getWindow();
+            stage.close();
+            }
+        } catch (IOException ex) {
         
+        }
     }
     @FXML
     private void handleCommentButtonAction(ActionEvent event){

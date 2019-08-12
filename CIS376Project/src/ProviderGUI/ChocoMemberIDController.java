@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -28,12 +29,16 @@ public class ChocoMemberIDController implements Initializable {
     
     @FXML
     private Label label;
-    
+    @FXML 
+    private TextField ProviderInformation;
     @FXML
     private void handleButtonAction(ActionEvent event) {
         
-        
-        if (label.getText()==""){
+                label.setText(chocan.ChocAn.verifyProviderIDNumber(ProviderInformation.getText()));
+        System.out.println(label.getText());
+        label.setText(chocan.ChocAn.verifyProviderIDNumber(ProviderInformation.getText()));
+        System.out.println(label.getText());
+        if (label.getText()=="valid"){
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("ChocoProviderMM.fxml"));
                 Scene Login_scene = new Scene(root);

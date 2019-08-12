@@ -7,9 +7,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="116.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProviderGUI.ChocoMemberIDController">
     <children>
-      <TextField layoutX="86.0" layoutY="48.0" />
+      <TextField fx:id="ProviderInformation" layoutX="86.0" layoutY="48.0" />
         <Button fx:id="button" layoutX="235.0" layoutY="48.0" onAction="#handleButtonAction" text="Enter" />
-        <Label fx:id="label" layoutX="86.0" layoutY="31.0" minHeight="16" minWidth="69" prefHeight="17.0" prefWidth="149.0" />
+        <Label fx:id="label" layoutX="14.0" layoutY="31.0" minHeight="16" minWidth="69" prefHeight="17.0" prefWidth="267.0" />
       <Label layoutX="14.0" layoutY="52.0" text="Provider ID:" />
     </children>
 </AnchorPane>
