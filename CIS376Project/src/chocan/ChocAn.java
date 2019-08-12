@@ -218,9 +218,5 @@ public class ChocAn {
         return statementFee;
     } //end getSessionFeeFromCode
     
-    public static void test()
-    {
-    System.out.println(getSessionFeeFromCode("883948"));
-    }
 
 }//end ChocAn class
