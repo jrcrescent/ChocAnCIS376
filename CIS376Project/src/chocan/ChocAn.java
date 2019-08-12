@@ -144,6 +144,7 @@ public class ChocAn {
      */
     public static String verifyMemberIDNumber(String memberIDnumber) {
         String status = "Invalid number";
+        String regex = "\\d+";
 
         //checking if entered ID is 9 characters long. 
         if (memberIDnumber.length() != 9) {
@@ -151,15 +152,9 @@ public class ChocAn {
         }
 
         //checking if entered ID is composed of numbers only. 
-        char[] tempArray = memberIDnumber.toCharArray();
-
-        for (int i = 0; i < tempArray.length; i++) {
-            if (tempArray[i] < 48 || tempArray[i] > 57) {
-                status = "Error! Entered ID can consist of numbers only [1-9].";
-                break;
-            }
-        }//end for loop
-
+        if (!memberIDnumber.matches(regex)) {
+            status = "Error! Entered ID can consist of numbers only [1-9].";
+        }
         //traversing through memberRecords to find if there's a matching ID
         for (int i = 0; i < memberRecords.size(); i++) {
             if (memberIDnumber.equals(memberRecords.get(i).getMemberIDNumber())) {
@@ -212,11 +207,47 @@ public class ChocAn {
                 statementFee += fee;
                 break;
             }//end if
-            
+
         }//end for
 
         return statementFee;
     } //end getSessionFeeFromCode
-    
 
+    /**
+     * Checks the status associated with a given member ID number.
+     *
+     * @param providerIDnumber a members ID number that needs to be validated.
+     * @return a String: "Validated" if member ID number is valid "Member
+     * suspended" if member has been suspended or an error message if entered ID
+     * was not in the proper format.
+     */
+    public static String verifyProviderIDNumber(String providerIDnumber) {
+        String status = "Invalid number";
+        String regex = "\\d+";
+
+        //checking if entered ID is 9 characters long. 
+        if (providerIDnumber.length() != 9) {
+            status = "Error! ID should be 9 integers long!";
+        }
+
+        if (!providerIDnumber.matches(regex)) {
+            status = "Error! Entered ID can consist of numbers only [1-9].";
+
+        }
+
+        //traversing through memberRecords to find if there's a matching ID
+        for (int i = 0; i < providerRecords.size(); i++) {
+            if (providerIDnumber.equals(providerRecords.get(i).getProviderIDnumber())) {
+                status = "valid";
+                break;
+            }
+        }//end for
+        
+        return status;
+    }//end verifyMemberIDNumber()
+    
+    
+   public static void test() {
+        System.out.print(verifyProviderIDNumber("gfd234"));
+    }
 }//end ChocAn class
