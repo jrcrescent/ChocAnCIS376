@@ -44,7 +44,9 @@ public class ChocoProviderMMController implements Initializable {
     @FXML
     private Button VServiceYes;
     @FXML
-    private Button VserviceNo;
+    private Button VServiceNo;
+    @FXML
+    private Label VServiceName;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
@@ -52,8 +54,7 @@ public class ChocoProviderMMController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-
-        if(chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText()).equals("Validated")){
+            if(chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText()).equals("Validated")){
             MemberID.setDisable(false);
             ServiceDate.setDisable(false);
             EnterOfDate.setDisable(false);  
@@ -85,6 +86,9 @@ public class ChocoProviderMMController implements Initializable {
         try {
         Stage stage;
         Parent root;
+        if(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()).equals("Invalid")){
+        //add label to inform user for invalid service code   
+        }else{
             if(event.getSource()==VServiceButton){
                 stage=new Stage();
                 root=FXMLLoader.load(getClass().getResource("VerificationServiceName.fxml"));
@@ -93,10 +97,15 @@ public class ChocoProviderMMController implements Initializable {
                 stage.initOwner(VServiceButton.getScene().getWindow());
                 stage.showAndWait();
             
+            }else if(event.getSource()==VServiceYes){
+
+                stage=(Stage) VServiceYes.getScene().getWindow();
+                stage.close();
             }else{
-            stage=(Stage) VServiceYes.getScene().getWindow();
-            stage.close();
+                stage=(Stage) VServiceNo.getScene().getWindow();
+                stage.close();    
             }
+        }
         } catch (IOException ex) {
         
         }

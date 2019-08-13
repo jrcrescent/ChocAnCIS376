@@ -173,7 +173,7 @@ public class ChocAn {
      * @return a String: name of session if valid or error message if not valid
      */
     public static String getSessionNameFromCode(String serviceCode) {
-        String name = "Code is not valid";
+        String name = "Invalid";
         String regex = "\\d+";
 
         if (serviceCode.matches(regex)) {
@@ -182,8 +182,7 @@ public class ChocAn {
                     name = providerDirectory.get(i).getSessionName();
                     break;
                 }//end if
-
-                name = "Code does not exist.";
+                
             }//end for
         } //end if       
 

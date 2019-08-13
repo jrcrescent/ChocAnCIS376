@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="110.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProviderGUI.ChocoProviderMMController">
    <children>
-      <Label layoutX="19.0" layoutY="12.0" prefHeight="42.0" prefWidth="398.0" text="You Have Chosen: ">
+      <Label fx:id="VServiceName" layoutX="19.0" layoutY="12.0" prefHeight="42.0" prefWidth="398.0">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font>
@@ -20,7 +20,7 @@
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Button>
-          <Button fx:id="VserviceNo" cancelButton="true" mnemonicParsing="false" text="No">
+          <Button fx:id="VServiceNo" cancelButton="true" mnemonicParsing="false" onAction="#handleSCodeBAction" text="No">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
