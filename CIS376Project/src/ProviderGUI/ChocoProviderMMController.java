@@ -24,29 +24,28 @@ import javafx.stage.Stage;
 public class ChocoProviderMMController implements Initializable {
 
     @FXML
-    private AnchorPane ProviderAnchorPane;
-    @FXML
     private TextField VerifyMemberID;
     @FXML
+    private Label VMemberLabel;
+    @FXML
     private TextField MemberID;
+    @FXML
+    private Label MemberIDLabel;
     @FXML
     private TextField ServiceDate;
     @FXML
     private Button EnterOfDate;
     @FXML
-    private Label VMemberLabel;
-    @FXML
     private TableView ServiceTable;
     @FXML
     private TextField ServiceCode;
     @FXML
+    private Label VServiceLabel;
+    @FXML
     private Button VServiceButton;
     @FXML
-    private Button VServiceYes;
-    @FXML
-    private Button VServiceNo;
-    @FXML
     private Label VServiceName;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
@@ -74,46 +73,32 @@ public class ChocoProviderMMController implements Initializable {
             ServiceTable.setDisable(false);
             ServiceCode.setDisable(false);
             VServiceButton.setDisable(false);
+            MemberIDLabel.setText("Validated");
         }else{
             ServiceTable.setDisable(true); 
             ServiceCode.setDisable(true);
             VServiceButton.setDisable(true);
+            MemberIDLabel.setText("Member ID does match");
         }
         
     }
     @FXML
     private void handleSCodeBAction(ActionEvent event){ 
-        try {
-        Stage stage;
-        Parent root;
         if(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()).equals("Invalid")){
-        //add label to inform user for invalid service code   
-        }else{
-            if(event.getSource()==VServiceButton){
-                stage=new Stage();
-                root=FXMLLoader.load(getClass().getResource("VerificationServiceName.fxml"));
-                stage.setScene(new Scene(root));
-                stage.initModality(Modality.APPLICATION_MODAL);
-                stage.initOwner(VServiceButton.getScene().getWindow());
-                stage.showAndWait();
+            VServiceLabel.setText("Invalid");
             
-            }else if(event.getSource()==VServiceYes){
+        }else{
+            VServiceLabel.setText("Validated");
+            VServiceName.setText(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()));
+        }
 
-                stage=(Stage) VServiceYes.getScene().getWindow();
-                stage.close();
-            }else{
-                stage=(Stage) VServiceNo.getScene().getWindow();
-                stage.close();    
-            }
-        }
-        } catch (IOException ex) {
-        
-        }
     }
+    
     @FXML
     private void handleCommentButtonAction(ActionEvent event){
         
     }
+    
     @FXML
     private void handleVerificationButtionAction(ActionEvent event){
         
