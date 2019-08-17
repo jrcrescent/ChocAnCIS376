@@ -52,8 +52,8 @@
             </TableView>
             <TextField fx:id="ServiceCode" disable="true" layoutX="190.0" layoutY="306.0" />
             <Button fx:id="VServiceButton" disable="true" layoutX="339.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleSCodeBAction" text="Enter" />
-            <TextArea disable="true" layoutX="104.0" layoutY="359.0" prefHeight="80.0" prefWidth="290.0" />
-            <Button disable="true" layoutX="394.0" layoutY="359.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="94.0" text="Enter" />
+            <TextArea fx:id="CommentArea" disable="true" layoutX="104.0" layoutY="359.0" prefHeight="80.0" prefWidth="290.0" />
+            <Button fx:id="CommentButton" disable="true" layoutX="394.0" layoutY="359.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="94.0" text="Enter" />
             <Button disable="true" layoutX="134.0" layoutY="484.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="290.0" text="Go to verification form">
                <font>
                   <Font name="Times New Roman" size="12.0" />

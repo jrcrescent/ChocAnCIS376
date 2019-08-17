@@ -34,7 +34,7 @@ public class ChocoMemberIDController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         
-                label.setText(chocan.ChocAn.verifyProviderIDNumber(ProviderInformation.getText()));
+        label.setText(chocan.ChocAn.verifyProviderIDNumber(ProviderInformation.getText()));
         System.out.println(label.getText());
         label.setText(chocan.ChocAn.verifyProviderIDNumber(ProviderInformation.getText()));
         System.out.println(label.getText());

@@ -20,6 +20,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;    
+import javafx.scene.control.TextArea;
 
 public class ChocoProviderMMController implements Initializable {
 
@@ -45,6 +48,10 @@ public class ChocoProviderMMController implements Initializable {
     private Button VServiceButton;
     @FXML
     private Label VServiceName;
+    @FXML
+    private TextArea CommentArea;
+    @FXML
+    private Button CommentButton;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -52,11 +59,12 @@ public class ChocoProviderMMController implements Initializable {
     }
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-            if(chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText()).equals("Validated")){
+    private void handleButtonAction(ActionEvent event) {            
+        if(chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText()).equals("Validated")){
             MemberID.setDisable(false);
             ServiceDate.setDisable(false);
             EnterOfDate.setDisable(false);  
+            ServiceDate.setText(java.time.LocalDate.now().toString());
             VMemberLabel.setText("Validated");
         } else{
             MemberID.setDisable(true);
@@ -86,17 +94,20 @@ public class ChocoProviderMMController implements Initializable {
     private void handleSCodeBAction(ActionEvent event){ 
         if(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()).equals("Invalid")){
             VServiceLabel.setText("Invalid");
-            
+            VServiceName.setText("");
+            CommentArea.setDisable(true);
+            CommentButton.setDisable(true);
         }else{
             VServiceLabel.setText("Validated");
             VServiceName.setText(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()));
+            CommentArea.setDisable(false);
+            CommentButton.setDisable(false);
         }
 
     }
     
     @FXML
     private void handleCommentButtonAction(ActionEvent event){
-        
     }
     
     @FXML
