@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -38,7 +39,8 @@ public class VerificationFormGUIController implements Initializable {
     private TextField ServiceCode;
     @FXML
     private TextField ServiceFee;
-    
+    @FXML
+    private CheckBox VerifyBox;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ProviderID.setText(ChocoMemberIDController.SendProviderID);
@@ -65,16 +67,18 @@ public class VerificationFormGUIController implements Initializable {
     
     @FXML
     private void handleVerifyAction(ActionEvent event){
-        try{
-            Parent  root = FXMLLoader.load(getClass().getResource("ChocoMemberID.fxml"));
-            Scene Forgot_scene = new Scene(root);
-            Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene.setScene(Forgot_scene);
-            scene.setTitle("Main Menu");
-            scene.show();
-        }
-        catch (IOException ex) {
-            Logger.getLogger(ChocoMemberIDController.class.getName()).log(Level.SEVERE, null, ex);
+        if(VerifyBox.isSelected()){
+            try{
+                Parent  root = FXMLLoader.load(getClass().getResource("ChocoMemberID.fxml"));
+                Scene Forgot_scene = new Scene(root);
+                Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene.setScene(Forgot_scene);
+                scene.setTitle("Provider ID");
+                scene.show();
+            }
+            catch (IOException ex) {
+                Logger.getLogger(ChocoMemberIDController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }  
     }
 }
