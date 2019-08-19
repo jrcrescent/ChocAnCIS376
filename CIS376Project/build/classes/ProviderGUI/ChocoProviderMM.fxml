@@ -45,7 +45,7 @@
             <TextField fx:id="ServiceDate" disable="true" editable="false" layoutX="325.0" layoutY="18.0" promptText="MM/DD/YYYY" />
             <TableView fx:id="ServiceTable" disable="true" layoutY="55.0" prefHeight="216.0" prefWidth="558.0">
                <columns>
-                  <TableColumn prefWidth="149.0" text="Service Code" />
+                  <TableColumn fx:id="CodeTable" prefWidth="149.0" text="Service Code" />
                   <TableColumn prefWidth="264.0" text="Service Name" />
                   <TableColumn prefWidth="144.0" text="Service Fee" />
                </columns>

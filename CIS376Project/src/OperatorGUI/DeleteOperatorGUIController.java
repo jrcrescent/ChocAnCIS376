@@ -24,16 +24,16 @@ import javafx.stage.Stage;
  *
  * @author Fallenanimes
  */
-public class AddMemberGUIController implements Initializable {
+public class DeleteOperatorGUIController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
 
-    }    
-    
     @FXML
     private void handleBackAction(ActionEvent event){
         try{
@@ -47,5 +47,6 @@ public class AddMemberGUIController implements Initializable {
         catch (IOException ex) {
             Logger.getLogger(OperatorMMController.class.getName()).log(Level.SEVERE, null, ex);
         }  
-    }  
+    }      
+    
 }

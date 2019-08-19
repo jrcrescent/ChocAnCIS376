@@ -35,12 +35,12 @@
                   <Font name="Times New Roman" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="376.0" layoutY="140.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="175.0" text="Remove Provider">
+            <Button layoutX="376.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleDeleteAction" prefHeight="72.0" prefWidth="175.0" text="Remove Provider">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="37.0" layoutY="140.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="175.0" text="Remove Member">
+            <Button fx:id="DeleteMemberBut" layoutX="37.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleDeleteAction" prefHeight="72.0" prefWidth="175.0" text="Remove Member">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>

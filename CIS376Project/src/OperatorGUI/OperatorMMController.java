@@ -17,10 +17,12 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class OperatorMMController implements Initializable {
-    public static String AddUser="";
+    public static String MorPUser="";
     
     @FXML 
     private Button AddMemberBut;
+    @FXML
+    private Button DeleteMemberBut;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -29,21 +31,42 @@ public class OperatorMMController implements Initializable {
     @FXML
     private void handleAddAction(ActionEvent event){
         if(event.getSource().equals(AddMemberBut)){
-            AddUser="Member";
+            MorPUser="Member";
         }
         else{
-            AddUser="Provider";
+            MorPUser="Provider";
         }
         try{
-            Parent  root = FXMLLoader.load(getClass().getResource("AddMemberGUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("AddMemberGUI.fxml"));
             Scene Forgot_scene = new Scene(root);
             Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene.setScene(Forgot_scene);
-            scene.setTitle("Validation Form");
+            scene.setTitle("Add "+MorPUser);
             scene.show();
         }
         catch (IOException ex) {
             Logger.getLogger(AddMemberGUIController.class.getName()).log(Level.SEVERE, null, ex);
         }  
-    }  
+    } 
+    
+    @FXML
+    private void handleDeleteAction(ActionEvent event){
+        if(event.getSource().equals(DeleteMemberBut)){
+            MorPUser="Member";
+        }
+        else{
+            MorPUser="Provider";
+        }
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("DeleteOperatorGUI.fxml"));
+            Scene Forgot_scene = new Scene(root);
+            Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene.setScene(Forgot_scene);
+            scene.setTitle("Remove "+MorPUser);
+            scene.show();
+        }
+        catch (IOException ex) {
+            Logger.getLogger(DeleteOperatorGUIController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
 }
