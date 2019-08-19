@@ -198,7 +198,7 @@ public class ChocAn {
      */
     public static String getSessionFeeFromCode(String serviceCode) {
         double fee = 0;
-        String statementFee = "The fee for service " + serviceCode + " is ";
+        String statementFee = "";
 
         for (int i = 0; i < providerDirectory.size(); i++) {
             if (providerDirectory.get(i).getServiceCode().equals(serviceCode)) {

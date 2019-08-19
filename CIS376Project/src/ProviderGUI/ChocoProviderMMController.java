@@ -71,7 +71,7 @@ public class ChocoProviderMMController implements Initializable {
     private TableColumn NameTable;
     @FXML
     private TableColumn Feetable;
-    
+    //grab information from gloabal Var fro chocan providerdir     private static ArrayList<Session> providerDirectory = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -131,7 +131,8 @@ public class ChocoProviderMMController implements Initializable {
             CommentArea.setDisable(false);
             CommentButton.setDisable(false);
             TotalFeeLabel.setDisable(false);
-            TotalFeeLabel.setText(chocan.ChocAn.getSessionFeeFromCode(ServiceCode.getText()));      
+            TotalFeeLabel.setText("Total Fee:");
+            TotalFeeLabel.setText(TotalFeeLabel.getText()+chocan.ChocAn.getSessionFeeFromCode(ServiceCode.getText()));      
         }
     }
     
