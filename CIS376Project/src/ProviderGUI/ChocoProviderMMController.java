@@ -102,11 +102,15 @@ public class ChocoProviderMMController implements Initializable {
     private void handleVerificationAction(ActionEvent event){
         
         if(MemberID.getText().equals(VerifyMemberID.getText())){
+            
             ServiceTable.setDisable(false);
             ServiceCode.setDisable(false);
             VServiceButton.setDisable(false);
             MemberIDLabel.setText("Validated");
+            SendMemberID=MemberID.getText();
+            
         }else{
+            
             ServiceTable.setDisable(true); 
             ServiceCode.setDisable(true);
             VServiceButton.setDisable(true);
@@ -133,6 +137,10 @@ public class ChocoProviderMMController implements Initializable {
             TotalFeeLabel.setDisable(false);
             TotalFeeLabel.setText("Total Fee:");
             TotalFeeLabel.setText(TotalFeeLabel.getText()+chocan.ChocAn.getSessionFeeFromCode(ServiceCode.getText()));      
+            
+            SendServiceName=VServiceName.getText();
+            SendServiceCode=ServiceCode.getText();
+            SendServiceFee=chocan.ChocAn.getSessionFeeFromCode(ServiceCode.getText());
         }
     }
     

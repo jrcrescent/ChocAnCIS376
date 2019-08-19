@@ -30,10 +30,23 @@ public class VerificationFormGUIController implements Initializable {
 
     @FXML
     private TextField ProviderID;
+    @FXML
+    private TextField MemberID;
+    @FXML
+    private TextField ServiceName;
+    @FXML
+    private TextField ServiceCode;
+    @FXML
+    private TextField ServiceFee;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ProviderID.setText(ChocoMemberIDController.SendProviderID);
+        MemberID.setText(ChocoProviderMMController.SendMemberID);
+        ServiceCode.setText(ChocoProviderMMController.SendServiceCode);
+        ServiceName.setText(ChocoProviderMMController.SendServiceName);
+        ServiceFee.setText(ChocoProviderMMController.SendServiceFee);
+        
     }    
     @FXML
     private void handleBackAction(ActionEvent event){
