@@ -8,8 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import java.time.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +20,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;    
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
 
 public class ChocoProviderMMController implements Initializable {
@@ -39,8 +40,6 @@ public class ChocoProviderMMController implements Initializable {
     @FXML
     private Button EnterOfDate;
     @FXML
-    private TableView ServiceTable;
-    @FXML
     private TextField ServiceCode;
     @FXML
     private Label VServiceLabel;
@@ -52,10 +51,20 @@ public class ChocoProviderMMController implements Initializable {
     private TextArea CommentArea;
     @FXML
     private Button CommentButton;
+    @FXML
+    private Label CommentLabel;
+    @FXML
+    private Label TotalFeeLabel;
+    @FXML
+    private Button VerifactionBut;
     
+    @FXML
+    private TableView ServiceTable;
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-     
+
+        
     }
     
     @FXML
@@ -87,9 +96,9 @@ public class ChocoProviderMMController implements Initializable {
             ServiceCode.setDisable(true);
             VServiceButton.setDisable(true);
             MemberIDLabel.setText("Member ID does match");
-        }
-        
+        }      
     }
+    
     @FXML
     private void handleSCodeBAction(ActionEvent event){ 
         if(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()).equals("Invalid")){
@@ -102,17 +111,35 @@ public class ChocoProviderMMController implements Initializable {
             VServiceName.setText(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()));
             CommentArea.setDisable(false);
             CommentButton.setDisable(false);
+            TotalFeeLabel.setDisable(false);
+            TotalFeeLabel.setText(chocan.ChocAn.getSessionFeeFromCode(ServiceCode.getText()));      
         }
-
     }
     
     @FXML
     private void handleCommentButtonAction(ActionEvent event){
+        if(CommentArea.getLength()<25)
+        {
+            VerifactionBut.setDisable(false);
+        }else{
+           CommentLabel.setText("Comment is too long. Max 25 characters");
+           VerifactionBut.setDisable(true);
+        }
     }
     
     @FXML
     private void handleVerificationButtionAction(ActionEvent event){
-        
+        try{
+            Parent  root = FXMLLoader.load(getClass().getResource("VerificationFormGUI.fxml"));
+            Scene Forgot_scene = new Scene(root);
+            Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene.setScene(Forgot_scene);
+            scene.setTitle("Main Menu");
+            scene.show();
+        }
+        catch (IOException ex) {
+            Logger.getLogger(VerificationFormGUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }  
 
 }
