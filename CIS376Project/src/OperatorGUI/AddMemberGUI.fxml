@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="347.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="OperatorGUI.AddMemberGUIController">
+   <children>
+      <Label prefHeight="91.0" prefWidth="347.0" style="-fx-background-color: c0f0c0;" text="Chocoholics Anonymous" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Times New Roman Bold" size="36.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="18.0" layoutY="105.0" prefHeight="407.0" prefWidth="311.0" style="-fx-background-color: c0f0c0;">
+         <children>
+            <Label layoutX="32.0" layoutY="71.0" text="ID Number:">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="219.0" text="State:" />
+            <TextField layoutX="93.0" layoutY="265.0" />
+            <TextField layoutX="93.0" layoutY="15.0" />
+            <TextField layoutX="93.0" layoutY="215.0" />
+            <TextField layoutX="93.0" layoutY="65.0" />
+            <TextField layoutX="94.0" layoutY="115.0" />
+            <Label layoutX="59.0" layoutY="19.0" text="Name:" />
+            <Label layoutX="40.0" layoutY="269.0" text="Zip Code:" />
+            <Label layoutX="65.0" layoutY="169.0" text="City:" />
+            <Label layoutX="15.0" layoutY="119.0" text="Street Address:" />
+            <TextField layoutX="93.0" layoutY="165.0" />
+            <CheckBox layoutX="81.0" layoutY="318.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="5.0" />
+            <Button layoutX="169.0" layoutY="352.0" mnemonicParsing="false" text="Verify" />
+            <Button layoutX="73.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleBackAction" text="Back" />
+            <Label layoutX="105.0" layoutY="318.0" text="Credit Card Information" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

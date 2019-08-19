@@ -60,7 +60,13 @@ public class ChocoProviderMMController implements Initializable {
     
     @FXML
     private TableView ServiceTable;
- 
+    @FXML
+    private TableColumn CodeTable;
+    @FXML
+    private TableColumn NameTable;
+    @FXML
+    private TableColumn Feetable;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -79,6 +85,10 @@ public class ChocoProviderMMController implements Initializable {
             MemberID.setDisable(true);
             ServiceDate.setDisable(true);
             EnterOfDate.setDisable(true);
+            ServiceTable.setDisable(true); 
+            ServiceCode.setDisable(true);
+            VServiceButton.setDisable(true);
+            VerifactionBut.setDisable(true);   
             VMemberLabel.setText(chocan.ChocAn.verifyMemberIDNumber(VerifyMemberID.getText()));
         }
     }
@@ -95,6 +105,9 @@ public class ChocoProviderMMController implements Initializable {
             ServiceTable.setDisable(true); 
             ServiceCode.setDisable(true);
             VServiceButton.setDisable(true);
+            CommentArea.setDisable(true);
+            CommentButton.setDisable(true);
+            VerifactionBut.setDisable(true);   
             MemberIDLabel.setText("Member ID does match");
         }      
     }
@@ -106,6 +119,7 @@ public class ChocoProviderMMController implements Initializable {
             VServiceName.setText("");
             CommentArea.setDisable(true);
             CommentButton.setDisable(true);
+            VerifactionBut.setDisable(true);   
         }else{
             VServiceLabel.setText("Validated");
             VServiceName.setText(chocan.ChocAn.getSessionNameFromCode(ServiceCode.getText()));
@@ -123,7 +137,7 @@ public class ChocoProviderMMController implements Initializable {
             VerifactionBut.setDisable(false);
         }else{
            CommentLabel.setText("Comment is too long. Max 25 characters");
-           VerifactionBut.setDisable(true);
+           VerifactionBut.setDisable(true);     
         }
     }
     
@@ -134,7 +148,7 @@ public class ChocoProviderMMController implements Initializable {
             Scene Forgot_scene = new Scene(root);
             Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene.setScene(Forgot_scene);
-            scene.setTitle("Main Menu");
+            scene.setTitle("Validation Form");
             scene.show();
         }
         catch (IOException ex) {
