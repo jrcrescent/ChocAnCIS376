@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -27,12 +28,12 @@ import javafx.stage.Stage;
  */
 public class VerificationFormGUIController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private TextField ProviderID;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ProviderID.setText(ChocoMemberIDController.SendProviderID);
     }    
     @FXML
     private void handleBackAction(ActionEvent event){

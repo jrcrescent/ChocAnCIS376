@@ -27,6 +27,7 @@ import javafx.stage.Stage;
  */
 public class ChocoMemberIDController implements Initializable {
     
+    public static String SendProviderID = ""; 
     @FXML
     private Label label;
     @FXML 
@@ -36,8 +37,9 @@ public class ChocoMemberIDController implements Initializable {
         
         label.setText(chocan.ChocAn.verifyProviderIDNumber(ProviderInformation.getText()));
         System.out.println(label.getText());
-        label.setText(chocan.ChocAn.verifyProviderIDNumber(ProviderInformation.getText()));
-        System.out.println(label.getText());
+
+        SendProviderID=ProviderInformation.getText();
+        
         if (label.getText()=="valid"){
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("ChocoProviderMM.fxml"));

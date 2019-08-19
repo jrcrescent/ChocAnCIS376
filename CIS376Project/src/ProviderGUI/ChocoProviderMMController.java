@@ -27,6 +27,11 @@ import javafx.scene.control.TextArea;
 
 public class ChocoProviderMMController implements Initializable {
 
+    public static String SendMemberID = ""; 
+    public static String SendServiceCode = "";
+    public static String SendServiceDate = "";
+    public static String SendServiceName = "";
+    public static String SendServiceFee ="";
     @FXML
     private TextField VerifyMemberID;
     @FXML
