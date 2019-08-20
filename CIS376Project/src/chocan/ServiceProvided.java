@@ -1,7 +1,8 @@
 package chocan;
 
 /** Represents a service that a provider has provided.
- * @author Hristo Bonev */
+ * @author Hristo Bonev 
+ * Date: 08/20/2019 - 12:25 AM */
 public class ServiceProvided {
     private String dateAndTime;
     private String dateServiceProvided;

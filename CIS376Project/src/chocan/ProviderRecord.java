@@ -98,5 +98,11 @@ public class ProviderRecord {
         
         return weeklyFee;
     }//end getTotalWeeklyFee();
+    
+    @Override
+    public String toString(){
+        return providerName + "," + providerIDnumber + "," + streetAddress
+        + "," + city + "," + state + "," + zipCode;
+    }
 
 }//end ProviderRecord

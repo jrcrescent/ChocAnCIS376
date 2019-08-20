@@ -246,11 +246,41 @@ public class ChocAn {
         return status;
     }//end verifyMemberIDNumber()
     
+    /** Deletes a member
+     * @param memberID the ID number of the member we're deleting
+     * @return String indicating whether the deletion was successful.
+     * @throws IOException 
+     */
+    public static String deleteMember(String memberID) throws IOException{
+        String returnMessage = "Member ID not found";
+        
+        boolean idFound = false;
+        
+        int i;
+        
+        for(i = 0 ; i < memberRecords.size() ; i++){
+            if(memberID.equals(memberRecords.get(i).getMemberIDNumber())){
+                idFound = true;
+                break;
+            }
+        }
+        
+        //removes the member located at index i of the ArrayList
+        if(idFound){
+            memberRecords.remove(memberRecords.get(i));
+            returnMessage = "Member removed successfully!";
+        }
+        
+        updateMembersInputFile(); //delete member from .txt file
+        
+        return returnMessage;
+    }//end deleteMember()
+    
     /** This method rewrites the members input file to whatever data is 
     * stored currently in the memberRecords ArrayList.
     * @throws FileNotFoundException
     * @throws IOException */
-    public static void updateMembersInputFile() throws FileNotFoundException, IOException{
+    private static void updateMembersInputFile() throws FileNotFoundException, IOException{
         
         PrintWriter printWr = new PrintWriter(new File(MEMBERS_INPUT_FILE_NAME));
         
@@ -262,5 +292,53 @@ public class ChocAn {
         printWr.close();
         
     }//end createNewMembersInputFile()
+    
+    /** Deletes a provider
+     * @param providerID the ID number of the provider we're deleting
+     * @return String indicating whether the deletion was successful.
+     * @throws IOException 
+     */
+    public static String deleteProvider(String providerID) throws IOException{
+        String returnMessage = "Provider ID not found";
+        
+        boolean idFound = false;
+        
+        int i;
+        
+        for(i = 0 ; i < providerRecords.size() ; i++){
+            if(providerID.equals(providerRecords.get(i).getProviderIDnumber())){
+                idFound = true;
+                break;
+            }
+        }
+        
+        //removes the member located at index i of the ArrayList
+        if(idFound){
+            providerRecords.remove(providerRecords.get(i)); 
+            returnMessage = "Member removed successfully!";
+        }
+        
+        updateProvidersInputFile(); //delete provider from .txt file
+        
+        return returnMessage;
+    }//end deleteMember()
+    
+    
+    /** This method rewrites the providers input file to whatever data is 
+    * stored currently in the providerRecords ArrayList.
+    * @throws FileNotFoundException
+    * @throws IOException */  
+    private static void updateProvidersInputFile() throws FileNotFoundException, IOException {
+        
+        PrintWriter printWr = new PrintWriter(new File(PROVIDERS_INPUT_FILE_NAME));
+        
+        //populates the new file with the new member data
+        for(int i = 0 ; i < providerRecords.size() ; i++){
+            printWr.println(providerRecords.get(i).toString());
+        }
+        
+        printWr.close();
+        
+    }//end updateProvidersInputFile()
     
 }//end ChocAn class
