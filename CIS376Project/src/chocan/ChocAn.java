@@ -2,6 +2,7 @@ package chocan;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -244,6 +245,22 @@ public class ChocAn {
 
         return status;
     }//end verifyMemberIDNumber()
-
+    
+    /** This method rewrites the members input file to whatever data is 
+    * stored currently in the memberRecords ArrayList.
+    * @throws FileNotFoundException
+    * @throws IOException */
+    public static void updateMembersInputFile() throws FileNotFoundException, IOException{
+        
+        PrintWriter printWr = new PrintWriter(new File(MEMBERS_INPUT_FILE_NAME));
+        
+        //populates the new file with the new member data
+        for(int i = 0 ; i < memberRecords.size() ; i++){
+            printWr.println(memberRecords.get(i).toString());
+        }
+        
+        printWr.close();
+        
+    }//end createNewMembersInputFile()
     
 }//end ChocAn class
