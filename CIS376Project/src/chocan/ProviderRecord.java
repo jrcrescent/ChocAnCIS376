@@ -1,10 +1,9 @@
 package chocan;
 
-/**
- * Stores a single line of data from the Provider input file (Data Store).
- *
- * @author Hristo Bonev
- */
+import java.util.ArrayList;
+
+/** Stores all information relating to providers
+ * @author Hristo Bonev */
 public class ProviderRecord {
 
     private String providerName;
@@ -13,6 +12,7 @@ public class ProviderRecord {
     private String city;
     private String state;
     private String zipCode;          //not an int because it can have leading 0s
+    private ArrayList<ServiceProvided> servicesProvided;
 
     ProviderRecord() {
         this.providerName = "";
@@ -21,16 +21,18 @@ public class ProviderRecord {
         this.city = "";
         this.state = "";
         this.zipCode = "";
+        this.servicesProvided = new ArrayList<>();
     }//end default c-tor
 
     ProviderRecord(String providerName, String providerIDnumber, String streetAddress,
-            String city, String state, String zipCode) {
+            String city, String state, String zipCode, ArrayList<ServiceProvided> servicesProvided) {
         this.providerName = providerName;
         this.providerIDnumber = providerIDnumber;
         this.streetAddress = streetAddress;
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
+        this.servicesProvided = servicesProvided;
     }//end c-tor
 
     public void setProviderName(String providerName) {
@@ -80,5 +82,21 @@ public class ProviderRecord {
     public String getZipCode() {
         return zipCode;
     }//end getZipCode()
+    
+    public int getTotalNumConsultations(){
+        int consultationsTotal = 0;
+        
+        //TO BE ADDED
+        
+        return consultationsTotal;
+    }//end getTotalNumConsultations()
+    
+    public double getTotalWeeklyFee(){
+        double weeklyFee = 0;
+        
+        //TO BE ADDED 
+        
+        return weeklyFee;
+    }//end getTotalWeeklyFee();
 
 }//end ProviderRecord
