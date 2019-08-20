@@ -42,6 +42,10 @@ public class VerificationFormGUIController implements Initializable {
     @FXML
     private TextField ServiceFee;
     @FXML
+    private TextField ServiceDate;
+    @FXML
+    private TextField CurrentDate;
+    @FXML
     private CheckBox VerifyBox;
     @FXML
     private Label label;
@@ -52,6 +56,8 @@ public class VerificationFormGUIController implements Initializable {
         ServiceCode.setText(ChocoProviderMMController.SendServiceCode);
         ServiceName.setText(ChocoProviderMMController.SendServiceName);
         ServiceFee.setText(ChocoProviderMMController.SendServiceFee);
+        ServiceDate.setText(java.time.LocalDate.now().toString());
+        CurrentDate.setText(java.time.LocalDate.now().toString());
         
     }    
     @FXML
