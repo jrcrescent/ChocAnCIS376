@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -275,6 +276,141 @@ public class ChocAn {
         
         return returnMessage;
     }//end deleteMember()
+    
+    /** This method generates a unique random ID number for a member / provider. 
+     * @param m_p if character passed = 'p' it will generate an ID number for a provider.
+     *            if character passed = 'm' it will generate an ID number for a member.
+     * @return unique member/provider ID number */
+    public static String generateIDnumber(char m_p){
+        String idNum = "";
+        
+        boolean match = false;
+
+        while(true) {
+            idNum = generateRandomID();
+            System.out.println(idNum);
+            if(m_p == 'm'){
+                for(int i = 0 ; i < memberRecords.size(); i++){
+                    if(idNum.equals(memberRecords.get(i).getMemberIDNumber())){
+                        match = true;
+                        break;
+                    }
+                }//end for
+            }//end if
+            
+            else if(m_p == 'p'){
+                for(int i = 0 ; i < providerRecords.size(); i++){
+                    if(idNum.equals(providerRecords.get(i).getProviderIDnumber())){
+                        match = true;
+                        break;
+                    }
+                }//end for
+            }//end else if
+            
+            
+            //if no matching ID was found break away from the while loop
+            if(!match){
+                break;
+            }
+            
+        }//end while
+        
+        return idNum;
+    }//end generateIDnumber()
+    
+    /**This method is a helper method. It should NOT be called within our GUI.
+     * @return RANDOMLY generated ID (without checking if it already exists).
+     */
+    private static String generateRandomID(){
+        String randomID = "";
+        
+        Random rand = new Random();
+        
+        for (int i = 0 ; i < 9 ; i++){
+            randomID += (char)(rand.nextInt(10) + '0');
+        }
+                
+        return randomID;
+    }//end generateRandomID()
+    
+    /**Adds a member.
+     * @param conString A string that holds a member's information in the form:
+     * "name,IDnumber,street,city,state,zip"
+     * @return String indicating whether addition was successful.*/
+    public static String addMember(String concatString) throws IOException{
+        String returnMssg = "";
+        
+        /*Splits the line into tokens:
+            tokenizedLine[0] = member name
+            tokenizedLine[1] = member ID number
+            tokenizedLine[2] = street address
+            ...
+            tokenizedLine[5] = member's zip code*/
+        String[] tokenizedLine = concatString.split(",");
+        
+        if(tokenizedLine[0].length() > 25){ //ensure name is 25 chars long
+            returnMssg = "Error! Member name is too long!";
+        }
+        else {
+            MemberRecord tempMember = new MemberRecord();
+        
+            tempMember.setMemberName(tokenizedLine[0]);
+            tempMember.setMemberIDNumber(tokenizedLine[1]);
+            tempMember.setMemberStatus("Validated");
+            tempMember.setStreetAddress(tokenizedLine[2]);
+            tempMember.setCity(tokenizedLine[3]);
+            tempMember.setState(tokenizedLine[4]);
+            tempMember.setZipCode(tokenizedLine[5]);
+
+            memberRecords.add(tempMember);
+
+            updateMembersInputFile();
+
+            returnMssg = "Member added successfully!";
+        }
+ 
+        return returnMssg;
+    }//end addMember()
+    
+    /** Adds a provider.
+     * @param concatString A string that holds a provider's information in the form:
+     * "name,IDnumber,street,city,state,zip"
+     * @return String String indicating whether addition was successful.
+     * @throws IOException 
+     */
+    public static String addProvider(String concatString) throws IOException {
+        String returnMssg = "";
+        
+        /*Splits the line into tokens:
+            tokenizedLine[0] = provider name
+            tokenizedLine[1] = provider ID number
+            tokenizedLine[2] = street address
+            ...
+            tokenizedLine[5] = provider's zip code*/
+        String[] tokenizedLine = concatString.split(",");
+        
+        if(tokenizedLine[0].length() > 25){ //ensure name is 25 chars long
+            returnMssg = "Error! Provider name is too long!";
+        }
+        else {
+            ProviderRecord tempProvider = new ProviderRecord();
+        
+            tempProvider.setProviderName(tokenizedLine[0]);
+            tempProvider.setProviderIDnumber(tokenizedLine[1]);
+            tempProvider.setStreetAddress(tokenizedLine[2]);
+            tempProvider.setCity(tokenizedLine[3]);
+            tempProvider.setState(tokenizedLine[4]);
+            tempProvider.setZipCode(tokenizedLine[5]);
+
+            providerRecords.add(tempProvider);
+
+            updateProvidersInputFile();
+
+            returnMssg = "Provider added successfully!";
+        }
+ 
+        return returnMssg;
+    }//end addProvider
     
     /** This method rewrites the members input file to whatever data is 
     * stored currently in the memberRecords ArrayList.

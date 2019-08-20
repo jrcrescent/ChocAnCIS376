@@ -1,6 +1,9 @@
 package cis376project;
 
+import static chocan.ChocAn.addMember;
+import static chocan.ChocAn.addProvider;
 import static chocan.ChocAn.deleteProvider;
+import static chocan.ChocAn.generateIDnumber;
 import static chocan.ChocAn.readMembersInputFile;
 import static chocan.ChocAn.readProviderDirectoryInputFile;
 import static chocan.ChocAn.readProvidersInputFile;
@@ -31,6 +34,7 @@ public class CIS376Project extends Application {
         readProviderDirectoryInputFile();
         readProvidersInputFile();
         readMembersInputFile();
+        addProvider("BobBobson,789789987,LittleVille,Dimi,NY,78998");
         launch(args);        
 
     }
