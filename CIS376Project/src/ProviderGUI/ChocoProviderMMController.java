@@ -24,6 +24,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
+import ProviderGUI.VerificationFormGUIController;
 
 public class ChocoProviderMMController implements Initializable {
 
@@ -32,6 +33,7 @@ public class ChocoProviderMMController implements Initializable {
     public static String SendServiceDate = "";
     public static String SendServiceName = "";
     public static String SendServiceFee ="";
+    public static String SendComment="";
     @FXML
     private TextField VerifyMemberID;
     @FXML
@@ -74,7 +76,29 @@ public class ChocoProviderMMController implements Initializable {
     //grab information from gloabal Var fro chocan providerdir     private static ArrayList<Session> providerDirectory = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        if(VerificationFormGUIController.GoBack==true){
+            MemberID.setDisable(false);
+            ServiceDate.setDisable(false);
+            EnterOfDate.setDisable(false);
+            ServiceTable.setDisable(false);
+            ServiceCode.setDisable(false);
+            VServiceButton.setDisable(false);
+            ServiceTable.setDisable(false);
+            ServiceCode.setDisable(false);
+            VServiceButton.setDisable(false);
+            CommentArea.setDisable(false);
+            CommentButton.setDisable(false);
+            TotalFeeLabel.setDisable(false);
+            VerifactionBut.setDisable(false);
+            
+            VerifyMemberID.setText(SendMemberID);
+            MemberID.setText(SendMemberID);
+            ServiceDate.setText(java.time.LocalDate.now().toString());
+            ServiceCode.setText(SendServiceCode);
+            TotalFeeLabel.setText(SendServiceFee);
+            VServiceName.setText(SendServiceName);   
+            CommentArea.setText(SendComment);
+        }
         
     }
     
@@ -149,6 +173,7 @@ public class ChocoProviderMMController implements Initializable {
         if(CommentArea.getLength()<25)
         {
             VerifactionBut.setDisable(false);
+            SendComment=CommentArea.getText();
         }else{
            CommentLabel.setText("Comment is too long. Max 25 characters");
            VerifactionBut.setDisable(true);     

@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="270.0" prefWidth="388.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="OperatorGUI.DeleteOperatorGUIController">
+<AnchorPane id="AnchorPane" prefHeight="270.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OperatorGUI.DeleteOperatorGUIController">
    <children>
       <Label prefHeight="91.0" prefWidth="388.0" style="-fx-background-color: c0f0c0;" text="Chocoholics Anonymous" textAlignment="JUSTIFY">
          <font>
@@ -23,22 +22,24 @@
                </font>
             </Label>
             <TextField layoutX="113.0" layoutY="23.0" />
-            <CheckBox layoutX="54.0" layoutY="66.0" mnemonicParsing="false" text="Verify">
+            <CheckBox layoutX="54.0" layoutY="83.0" mnemonicParsing="false" text="Verify">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </CheckBox>
-            <Button layoutX="187.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Confirm">
+            <Button layoutX="181.0" layoutY="109.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Confirm">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="86.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="25.0" prefWidth="53.0" text="Back">
+            <Button layoutX="87.0" layoutY="109.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="25.0" prefWidth="53.0" text="Back">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="44.0" layoutY="6.0" prefHeight="17.0" prefWidth="210.0" />
+            <Label layoutX="44.0" layoutY="6.0" prefHeight="17.0" prefWidth="216.0" />
+            <Label layoutX="54.0" layoutY="66.0" prefHeight="17.0" prefWidth="216.0" />
+            <Label layoutX="44.0" layoutY="6.0" prefHeight="17.0" prefWidth="216.0" text="Label" />
          </children>
       </AnchorPane>
    </children>

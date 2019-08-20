@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -28,7 +29,8 @@ import javafx.stage.Stage;
  * @author Fallenanimes
  */
 public class VerificationFormGUIController implements Initializable {
-
+    
+    public static boolean GoBack=false;
     @FXML
     private TextField ProviderID;
     @FXML
@@ -41,6 +43,8 @@ public class VerificationFormGUIController implements Initializable {
     private TextField ServiceFee;
     @FXML
     private CheckBox VerifyBox;
+    @FXML
+    private Label label;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ProviderID.setText(ChocoMemberIDController.SendProviderID);
@@ -51,7 +55,9 @@ public class VerificationFormGUIController implements Initializable {
         
     }    
     @FXML
-    private void handleBackAction(ActionEvent event){
+    private void handleBackAction(ActionEvent event){     
+        GoBack=true;
+        
         try{
             Parent  root = FXMLLoader.load(getClass().getResource("ChocoProviderMM.fxml"));
             Scene Forgot_scene = new Scene(root);
@@ -67,6 +73,7 @@ public class VerificationFormGUIController implements Initializable {
     
     @FXML
     private void handleVerifyAction(ActionEvent event){
+        GoBack=false;
         if(VerifyBox.isSelected()){
             try{
                 Parent  root = FXMLLoader.load(getClass().getResource("ChocoMemberID.fxml"));
@@ -79,6 +86,8 @@ public class VerificationFormGUIController implements Initializable {
             catch (IOException ex) {
                 Logger.getLogger(ChocoMemberIDController.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }else{
+            label.setText("Box not checked");
         }  
     }
 }
