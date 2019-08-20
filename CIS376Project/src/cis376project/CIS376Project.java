@@ -1,12 +1,6 @@
 package cis376project;
 
-import static chocan.ChocAn.addMember;
-import static chocan.ChocAn.addProvider;
-import static chocan.ChocAn.deleteProvider;
-import static chocan.ChocAn.generateIDnumber;
-import static chocan.ChocAn.readMembersInputFile;
-import static chocan.ChocAn.readProviderDirectoryInputFile;
-import static chocan.ChocAn.readProvidersInputFile;
+import static chocan.ChocAn.*;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

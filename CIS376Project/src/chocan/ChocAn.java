@@ -477,4 +477,101 @@ public class ChocAn {
         
     }//end updateProvidersInputFile()
     
+    /**Returns a comma-separated string containing all info for a member/provider.
+     * @param IDnumber the ID number that belongs to a member/provider
+     * @param m_p character that indicates if ID# belongs to member or provider
+     * @return Comma separated string that holds the current info we have 
+     */
+    public static String getConcatStringFromID(String IDnumber, char m_p){
+        String concatString = "Error! ID# not found!";
+       
+        if(m_p == 'm'){ //if ID number belongs to a member
+            int i;
+            
+            //find which index that ID is located at
+            for(i = 0 ; i < memberRecords.size(); i++){
+                if(IDnumber.equals(memberRecords.get(i).getMemberIDNumber())){
+                    concatString = memberRecords.get(i).toString();
+                    break;
+                }
+            }    
+        }//end if
+        else if(m_p == 'p'){//if ID number belongs to a provider
+            int i;
+            
+            //find which index that ID is located at
+            for(i = 0 ; i < providerRecords.size(); i++){
+                if(IDnumber.equals(providerRecords.get(i).getProviderIDnumber())){
+                    concatString = providerRecords.get(i).toString();
+                    break;
+                }
+            }
+        }//end else-if
+        
+        return concatString;
+    }//end getConcatStringFromID()
+    
+    /** Updates the information we have on file for a Member / Provider
+     * @param IDnumber The ID# of the member/provider whose info we're updating
+     * @param concatString A comma-separated string containing updated info.
+     * @param m_p Character indicating whether the ID# and info are associated with
+     *            a member ['m'] or a provider ['p']
+     * @return String indicating whether update was successfull.
+     * @throws IOException 
+     */
+    public static String update_Member_Provider(String IDnumber, String concatString, char m_p) throws IOException{
+        String status = "Error! Invalid data entered!";
+        
+        /*tokenizes the concatanated string such that:
+          tokenized[0] = member/provider name
+          tokenized[1] = member/provider ID#
+          tokenized[2] = street address
+          tokenized[3] = city 
+          tokenized[4] = state
+          tokenized[5] = zip*/
+        String[] tokenized = concatString.split(",");
+        
+        if(m_p == 'm'){ //if updating Member's info
+            int i;
+            for(i = 0 ; i < memberRecords.size() ; i++){
+                if(IDnumber.equals(memberRecords.get(i).getMemberIDNumber())){
+                    memberRecords.get(i).setMemberName(tokenized[0]);
+                    memberRecords.get(i).setMemberIDNumber(tokenized[1]);
+                    memberRecords.get(i).setStreetAddress(tokenized[2]);
+                    memberRecords.get(i).setCity(tokenized[3]);
+                    memberRecords.get(i).setState(tokenized[4]);
+                    memberRecords.get(i).setZipCode(tokenized[5]);
+
+                    updateMembersInputFile();
+
+                    status = "Member info was successfully updated.";
+                }//end if
+            }//end for
+        }//end if
+        
+        else if(m_p == 'p'){//if updating Provider's info
+           int i;
+            for(i = 0 ; i < providerRecords.size() ; i++){
+                if(IDnumber.equals(providerRecords.get(i).getProviderIDnumber())){
+                    providerRecords.get(i).setProviderName(tokenized[0]);
+                    providerRecords.get(i).setProviderIDnumber(tokenized[1]);
+                    providerRecords.get(i).setStreetAddress(tokenized[2]);
+                    providerRecords.get(i).setCity(tokenized[3]);
+                    providerRecords.get(i).setState(tokenized[4]);
+                    providerRecords.get(i).setZipCode(tokenized[5]);
+
+                    updateProvidersInputFile();
+
+                    status = "Provider info was successfully updated."; 
+                }//end if
+            }//end for 
+        }//end else-if
+        
+        else {
+            status = "Error! Invalid character entered!";
+        }//end else
+        
+        return status;
+    }//end update_Member_Provider
+    
 }//end ChocAn class
