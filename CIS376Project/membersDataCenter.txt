@@ -1,6 +1,3 @@
-John Ronald,568948112,Validated,879 Truck Drive,Dearborn,MI,48308
-Mike Tyler,587485003,Validated,025 Hospital Rr.,Troy,MI,48325
-Bob Catlover,123654789,Validated,867 Awesome Avenue,West Bloomfield,MI,48756
 Kelly Fish,112358132,Validated,1114 Princess Drive,Sparksville,NY,10012
 Thor Almighty,589658740,Validated,226 Pineknoll Ave.,Mcminnville,TN,37110
 Capitano Mericano,001122334,Validated,45 Newcastle Road,Brookline,MA,02446
@@ -17,4 +14,3 @@ Aaron Strongborn,332255484,Validated,38 St. Margarets Lane,Cherry Hill,NJ,08003
 Katara Kirgsten,483270500,Validated,7916 Cherry St.,Wakefield,MA,01880
 Sakura Haruno,759957758,Validated,61 E. Sunbeam Avenue,Wilmington,MA,01887
 Herry Fort,718293648,Validated,8795 NW.Truesel St.,Elk Grove Village,IL,60007
-Jim Jimington,887998665,Validated,251 Cardinal Road,Billings,MT,59101

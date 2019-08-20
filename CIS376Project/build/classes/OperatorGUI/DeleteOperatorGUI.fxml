@@ -16,18 +16,18 @@
       </Label>
       <AnchorPane layoutX="14.0" layoutY="106.0" prefHeight="148.0" prefWidth="361.0" style="-fx-background-color: c0f0c0;">
          <children>
-            <Label layoutX="54.0" layoutY="29.0" text="ID Number:">
+            <Label layoutX="55.0" layoutY="49.0" text="ID Number:">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="113.0" layoutY="23.0" />
-            <CheckBox layoutX="54.0" layoutY="83.0" mnemonicParsing="false" text="Verify">
+            <TextField fx:id="IDNumberText" layoutX="114.0" layoutY="43.0" />
+            <CheckBox fx:id="VerifyBox" layoutX="54.0" layoutY="83.0" mnemonicParsing="false" text="This iis the ID number I want to delete">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </CheckBox>
-            <Button layoutX="181.0" layoutY="109.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Confirm">
+            <Button layoutX="181.0" layoutY="109.0" mnemonicParsing="false" onAction="#DeleteIDNumber" prefHeight="25.0" prefWidth="59.0" text="Confirm">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
@@ -37,9 +37,12 @@
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="44.0" layoutY="6.0" prefHeight="17.0" prefWidth="216.0" />
-            <Label layoutX="54.0" layoutY="66.0" prefHeight="17.0" prefWidth="216.0" />
-            <Label layoutX="44.0" layoutY="6.0" prefHeight="17.0" prefWidth="216.0" text="Label" />
+            <Label fx:id="IDLabel" layoutX="44.0" layoutY="6.0" prefHeight="17.0" prefWidth="216.0" />
+            <Label fx:id="VerifyBoxLabel" layoutX="54.0" layoutY="66.0" prefHeight="17.0" prefWidth="216.0" />
+            <Label fx:id="IDLabel" layoutX="55.0" layoutY="25.0" prefHeight="17.0" prefWidth="216.0">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font></Label>
          </children>
       </AnchorPane>
    </children>

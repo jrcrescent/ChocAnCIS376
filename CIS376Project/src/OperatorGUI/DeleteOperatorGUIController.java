@@ -5,6 +5,7 @@
  */
 package OperatorGUI;
 
+import static OperatorGUI.OperatorMMController.MorPUser;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,18 +18,22 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Fallenanimes
- */
+
 public class DeleteOperatorGUIController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private Label VerifyBoxLabel;
+    @FXML
+    private Label IDLabel;
+    @FXML
+    private TextField IDNumberText;
+    @FXML
+    private CheckBox VerifyBox;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -47,6 +52,32 @@ public class DeleteOperatorGUIController implements Initializable {
         catch (IOException ex) {
             Logger.getLogger(OperatorMMController.class.getName()).log(Level.SEVERE, null, ex);
         }  
-    }      
-    
+    }
+    @FXML
+    private void DeleteIDNumber(ActionEvent event){
+        if(VerifyBox.isSelected()){
+            VerifyBoxLabel.setText("");
+            if(MorPUser.equals("Member")){
+                try {
+                    IDLabel.setText(chocan.ChocAn.verifyMemberIDNumber(IDNumberText.getText()));
+                    if(IDLabel.getText().equals("Validated")){
+                        chocan.ChocAn.deleteMember(IDNumberText.getText());
+                    }
+                } catch (IOException ex) {
+                Logger.getLogger(DeleteOperatorGUIController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else if(MorPUser.equals("Provider")){
+                IDLabel.setText(chocan.ChocAn.verifyProviderIDNumber(IDNumberText.getText()));
+                if(IDLabel.getText().equals("valid")){
+                    try {
+                        chocan.ChocAn.deleteProvider(IDNumberText.getText());
+                    } catch (IOException ex) {
+                        Logger.getLogger(DeleteOperatorGUIController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        }else{
+            VerifyBoxLabel.setText("Box not checked");
+        }
+    }
 }

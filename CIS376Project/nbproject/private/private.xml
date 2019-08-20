@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Desktop/CIS%20LATEST/ChocAnCIS376/CIS376Project/src/cis376project/CIS376Project.java</file>
-            <file>file:/D:/Desktop/CIS%20LATEST/ChocAnCIS376/CIS376Project/src/chocan/ChocAn.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/chocan/Session.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/OperatorGUI/OperatorMMController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/ProviderGUI/VerificationFormGUIController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/chocan/ChocAn.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/chocan/MemberRecord.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/ProviderGUI/ChocoProviderMMController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/OperatorGUI/DeleteOperatorGUIController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/cis376project/CIS376Project.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/ProviderGUI/ChocoMemberIDController.java</file>
         </group>
     </open-files>
 </project-private>
