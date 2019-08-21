@@ -14,8 +14,8 @@ public class CIS376Project extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        //Parent root = FXMLLoader.load(getClass().getResource("/ProviderGUI/ChocoMemberID.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/OperatorGUI/OperatorMM.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ProviderGUI/ChocoMemberID.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/OperatorGUI/OperatorMM.fxml"));
 
         Scene scene = new Scene(root);
 
@@ -29,7 +29,6 @@ public class CIS376Project extends Application {
         readProviderDirectoryInputFile();
         readProvidersInputFile();
         readMembersInputFile();
-        addProvider("BobBobson,789789987,LittleVille,Dimi,NY,78998");
 
         launch(args);
 

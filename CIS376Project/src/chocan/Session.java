@@ -11,13 +11,13 @@ public class Session {
     private String serviceCode;//not an int because it can have leading 0s
     private double fee;
 
-    Session() {
+    public Session() {
         sessionName = "";
         serviceCode = "";
         fee = 0.0;
     }//default c-tor
 
-    Session(String sessionName, String serviceCode, double fee) {
+    public Session(String sessionName, String serviceCode, double fee) {
         this.sessionName = sessionName;
         this.serviceCode = serviceCode;
         this.fee = fee;

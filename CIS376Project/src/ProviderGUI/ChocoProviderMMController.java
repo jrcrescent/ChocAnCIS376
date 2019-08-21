@@ -73,7 +73,7 @@ public class ChocoProviderMMController implements Initializable {
     private TableColumn NameTable;
     @FXML
     private TableColumn Feetable;
-    //grab information from gloabal Var fro chocan providerdir     private static ArrayList<Session> providerDirectory = new ArrayList<>();
+    //grab information from gloabal Var fro chocan providerdir private static ArrayList<Session> providerDirectory = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if(VerificationFormGUIController.GoBack==true){

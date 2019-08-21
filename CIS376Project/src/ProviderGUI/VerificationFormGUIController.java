@@ -6,6 +6,7 @@
 package ProviderGUI;
 
 import OperatorGUI.OperatorMMController;
+import chocan.Session;
 import java.io.IOException;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
@@ -86,6 +87,12 @@ public class VerificationFormGUIController implements Initializable {
         GoBack=false;
         if(VerifyBox.isSelected()){
             try{
+                chocan.ChocAn.serviceInformation(CurrentDate.getText(),ServiceDate.getText(),MemberID.getText()
+                ,new Session(ServiceName.getText(),ServiceCode.getText(),Double.parseDouble(ServiceFee.getText())),
+                ChocoProviderMMController.SendServiceFee,ProviderID.getText());
+                
+                chocan.ChocAn.generateAllServicesForWeek();
+                
                 Parent  root = FXMLLoader.load(getClass().getResource("ChocoMemberID.fxml"));
                 Scene Forgot_scene = new Scene(root);
                 Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -98,6 +105,6 @@ public class VerificationFormGUIController implements Initializable {
             }
         }else{
             label.setText("Box not checked");
-        }  
+        }
     }
 }
