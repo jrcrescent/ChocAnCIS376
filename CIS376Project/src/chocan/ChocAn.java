@@ -23,6 +23,10 @@ public class ChocAn {
     private static final String MEMBERS_INPUT_FILE_NAME = "membersDataCenter.txt";
     private static final String PROVIDERS_INPUT_FILE_NAME = "providersDataCenter.txt";
     private static final String TOTAL_SERVICES_OUTPUT = "servicesForWeek.txt";
+        private static final String MEMBER_REPORT = "memberReport.txt";
+                private static final String PROVIDER_REPORT = "providerReport.txt";
+
+
 
 
     /*The provider directory input file is stored in this data structure. 
@@ -708,6 +712,34 @@ public class ChocAn {
 
         return week;
     }
+    
+    public static void generateMemberReport()
+    {
+    
+         PrintWriter printWr = new PrintWriter(new File(TOTAL_SERVICES_OUTPUT));
+        int servFeeTotal = 0;
+        int currWeek = generateCurrentWeek();
+
+        printWr.println("SEVICES DELIVERED DURING WEEK" + currWeek);
+
+        for (int i = 0; i < serviceTotal.size(); i++) {
+            if (currWeek == serviceTotal.get(i).getWeek()) {
+                printWr.println("");
+                printWr.println("Current date and time: " + serviceTotal.get(i).getCurrentDateTime());
+                printWr.println("Date service was provided: " + serviceTotal.get(i).getDateServiceProvided());
+                printWr.println("Provider number: " + serviceTotal.get(i).getProviderIDNumber());
+                printWr.println("Member number: " + serviceTotal.get(i).getMemberIDNumber());
+                printWr.println("Service Code: " + serviceTotal.get(i).getSession().getServiceCode());
+                servFeeTotal += serviceTotal.get(i).getSession().getFee();
+              
+            } // end if
+        }//end for
+        printWr.println("");
+        printWr.println("Total Fee: " + servFeeTotal);
+
+        printWr.close();
+    }
+    
     
     
    
