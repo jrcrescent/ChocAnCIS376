@@ -1,9 +1,16 @@
 package chocan;
 
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.temporal.WeekFields;
 import java.util.ArrayList;
+import java.util.Locale;
 
-/** Stores all information relating to providers
- * @author Hristo Bonev */
+/**
+ * Stores all information relating to providers
+ *
+ * @author Hristo Bonev
+ */
 public class Provider {
 
     private String providerName;
@@ -82,37 +89,55 @@ public class Provider {
     public String getZipCode() {
         return zipCode;
     }//end getZipCode()
-    
-    public int getTotalNumConsultations(){
+
+    public String getTotalNumConsultations() {
         int consultationsTotal = 0;
+
+        consultationsTotal = this.servicesProvided.size();
         
-        //TO BE ADDED
-        
-        return consultationsTotal;
+        String numberAsString = String.format("%03d", consultationsTotal);             
+
+        return numberAsString;
     }//end getTotalNumConsultations()
-    
-    public double getTotalWeeklyFee(){
-        double weeklyFee = 0;
+
+    public void generateMemberServices(PrintWriter printWr, int currWeek) {
+
+        printWr.println("PROVIDER SERVICE SUMMARY FOR WEEK " + currWeek);
+        int servFeeTotal = 0;
+        for (int i = 0; i < servicesProvided.size(); i++) {
+            if (currWeek == servicesProvided.get(i).getWeek()) {
+                printWr.println("");
+                printWr.println("Date of service: " + servicesProvided.get(i).getDateServiceProvided());
+                printWr.println("Recieved by Computer: " + servicesProvided.get(i).getCurrentDateTime());
+                printWr.println("Member name: " + servicesProvided.get(i).getMemberName());
+                printWr.println("Member number: " + servicesProvided.get(i).getMemberIDNumber());
+                printWr.println("Service Code: " + servicesProvided.get(i).getSession().getServiceCode());
+                printWr.println("Fee to be paid: " + servicesProvided.get(i).getSession().getFee());
+                servFeeTotal += servicesProvided.get(i).getSession().getFee();
+            } // end if
+        }//end for
+        printWr.println("Total consultations: " + getTotalNumConsultations());
+        printWr.println("Total fee for week: " + servFeeTotal);
         
-        //TO BE ADDED 
-        
-        return weeklyFee;
-    }//end getTotalWeeklyFee();
-    
-    public void addServicesProvided(Service service)
-    {
+
+        printWr.println("");
+
+        printWr.close();
+
+    }
+
+    public void addServicesProvided(Service service) {
         this.servicesProvided.add(service);
     }//end addServicesReceived()
-    
-    public ArrayList<Service> getServicesRecieved()
-    {
+
+    public ArrayList<Service> getServicesProvided() {
         return servicesProvided;
     }//end getServicesRecieved
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return providerName + "," + providerIDnumber + "," + streetAddress
-        + "," + city + "," + state + "," + zipCode;
+                + "," + city + "," + state + "," + zipCode;
     }
 
 }//end Provider

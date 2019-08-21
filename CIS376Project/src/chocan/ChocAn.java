@@ -602,6 +602,36 @@ public class ChocAn {
         return status;
     }//end update_Member_Provider
 
+    public static String getProviderNameFromCode(String providerID)
+    {
+        String name = "";
+        for (int i = 0; i < providerRecords.size(); i++)
+        {
+            if (providerID == providerRecords.get(i).getProviderIDnumber())
+            {
+                name = providerRecords.get(i).getProviderIDnumber();
+                break;
+            }
+        }
+                
+        return name;
+    }
+    
+    public static String getMemberNameFromCode(String memberID)
+    {
+        String name = "";
+        for (int i = 0; i < memberRecords.size(); i++)
+        {
+            if (memberID == memberRecords.get(i).getMemberIDNumber())
+            {
+                name = memberRecords.get(i).getMemberIDNumber();
+                break;
+            }
+        }
+                
+        return name;
+    }
+    
     /**
      * Adds to 3 service lists once the verification form is accepted *
      *
@@ -617,7 +647,7 @@ public class ChocAn {
             String comments, String providerID) {
         Service newAdd = new Service(currentDateTime, dateServiceProvided,
                 memberIDNumber, session,
-                comments, providerID);
+                comments, providerID, getMemberNameFromCode(memberIDNumber), getProviderNameFromCode(providerID));
 
         serviceTotal.add(newAdd);
 
@@ -678,6 +708,7 @@ public class ChocAn {
 
         return week;
     }
+    
     
    
 }//end ChocAn class
