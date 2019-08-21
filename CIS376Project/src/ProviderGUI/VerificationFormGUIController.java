@@ -61,6 +61,7 @@ public class VerificationFormGUIController implements Initializable {
        
         ServiceDate.setText(java.time.LocalDateTime.now().format(formatter));
         CurrentDate.setText(java.time.LocalDateTime.now().format(formatter));
+
         
     }    
     @FXML

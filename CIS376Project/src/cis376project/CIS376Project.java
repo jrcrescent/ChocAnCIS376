@@ -1,5 +1,6 @@
 package cis376project;
 
+import chocan.ChocAn;
 import static chocan.ChocAn.*;
 import java.io.IOException;
 import javafx.application.Application;
@@ -29,7 +30,7 @@ public class CIS376Project extends Application {
         readProvidersInputFile();
         readMembersInputFile();
         addProvider("BobBobson,789789987,LittleVille,Dimi,NY,78998");
-        launch(args);        
+        launch(args);
 
     }
 

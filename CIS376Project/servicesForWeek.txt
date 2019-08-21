@@ -1,0 +1,20 @@
+SEVICES DELIVERED DURING WEEK34
+Current date and time: 2019-08-20T22:05:17.172
+Date service was provided: 2019-08-20T22:05:17.172
+Provider number: 887758580
+Member number: 123464999
+Service Code: soemthing
+
+Current date and time: 2019-08-20T22:05:17.172
+Date service was provided: 2019-08-20T22:05:17.172
+Provider number: 887758580
+Member number: 123464999
+Service Code: soemthing
+
+Current date and time: 2019-08-20T22:05:17.172
+Date service was provided: 2019-08-20T22:05:17.172
+Provider number: 887758580
+Member number: 123464999
+Service Code: soemthing
+
+Total Fee: 69
