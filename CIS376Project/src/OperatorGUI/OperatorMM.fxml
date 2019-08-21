@@ -45,12 +45,12 @@
                   <Font name="Times New Roman" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="376.0" layoutY="220.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="175.0" text="Update Provider">
+            <Button layoutX="376.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="72.0" prefWidth="175.0" text="Update Provider">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="37.0" layoutY="220.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="175.0" text="Update Member">
+            <Button fx:id="UpdateMemberBut" layoutX="37.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="72.0" prefWidth="175.0" text="Update Member">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>

@@ -23,6 +23,8 @@ public class OperatorMMController implements Initializable {
     private Button AddMemberBut;
     @FXML
     private Button DeleteMemberBut;
+        @FXML
+    private Button UpdateMemberBut;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -63,6 +65,26 @@ public class OperatorMMController implements Initializable {
             Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene.setScene(Forgot_scene);
             scene.setTitle("Remove "+MorPUser);
+            scene.show();
+        }
+        catch (IOException ex) {
+            Logger.getLogger(DeleteOperatorGUIController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
+     @FXML
+    private void handleUpdateAction(ActionEvent event){
+        if(event.getSource().equals(UpdateMemberBut)){
+            MorPUser="Member";
+        }
+        else{
+            MorPUser="Provider";
+        }
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("UpdateOperatorGUI.fxml"));
+            Scene Forgot_scene = new Scene(root);
+            Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene.setScene(Forgot_scene);
+            scene.setTitle("Update "+MorPUser);
             scene.show();
         }
         catch (IOException ex) {

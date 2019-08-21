@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package OperatorGUI;
 
 import java.io.IOException;
@@ -21,15 +16,18 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import static OperatorGUI.OperatorMMController.MorPUser;
 
 /**
  * FXML Controller class
  *
  * @author Fallenanimes
  */
-public class AddMemberGUIController implements Initializable {
+public class UpdateOperatorGUIController implements Initializable {
 
+    @FXML
+    private TextField NumberIDText;
+    @FXML
+    private Label IDLabel;
     @FXML
     private TextField NameText;
     @FXML
@@ -47,14 +45,8 @@ public class AddMemberGUIController implements Initializable {
     @FXML
     private Label VerifyLabel;
 
-    String ConString;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(MorPUser=="Member"){
-            IDText.setText(chocan.ChocAn.generateIDnumber('m'));
-        }else{
-          IDText.setText(chocan.ChocAn.generateIDnumber('p'));  
-        }
     }    
     
     @FXML
@@ -70,29 +62,13 @@ public class AddMemberGUIController implements Initializable {
         catch (IOException ex) {
             Logger.getLogger(OperatorMMController.class.getName()).log(Level.SEVERE, null, ex);
         }  
-    }   
-    
-    @FXML 
-    private void handleCreateAction(ActionEvent event){
-        if(VerifyBox.isSelected()){
-            ConString=NameText.getText()+","+IDText.getText()+","+StreetText.getText()+","+CityText.getText()+","+StateText.getText()+","+ZipText.getText();
-            if(MorPUser.equals("Member")){
-                try {
-                    chocan.ChocAn.addMember(ConString);
-                } catch (IOException ex) {
-                    Logger.getLogger(AddMemberGUIController.class.getName()).log(Level.SEVERE, null, ex);
-                } 
-            }else{
-                 try {
-                    chocan.ChocAn.addProvider(ConString);
-                } catch (IOException ex) {
-                    Logger.getLogger(AddMemberGUIController.class.getName()).log(Level.SEVERE, null, ex);
-                }                
-            }
-
-            
-        }else{
-            VerifyLabel.setText("Box not checked");
-        }
+    }
+    @FXML
+    private void GetInfoAction(ActionEvent event){
+        
+    }
+    @FXML   
+    private void handleUpdateAction(ActionEvent event){
+        
     }
 }

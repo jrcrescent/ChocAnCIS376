@@ -14,3 +14,5 @@ Aaron Strongborn,332255484,Validated,38 St. Margarets Lane,Cherry Hill,NJ,08003
 Katara Kirgsten,483270500,Validated,7916 Cherry St.,Wakefield,MA,01880
 Sakura Haruno,759957758,Validated,61 E. Sunbeam Avenue,Wilmington,MA,01887
 Herry Fort,718293648,Validated,8795 NW.Truesel St.,Elk Grove Village,IL,60007
+Zaid Alsafi,078871875,Validated,6520 Asbury Park,Detroit,MI,48228
+Bob Ross,648882471,Validated,6520 Asbury Park,Detroit,Michigan,48228

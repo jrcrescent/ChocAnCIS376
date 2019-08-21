@@ -69,6 +69,7 @@ public class DeleteOperatorGUIController implements Initializable {
             }else if(MorPUser.equals("Provider")){
                 IDLabel.setText(chocan.ChocAn.verifyProviderIDNumber(IDNumberText.getText()));
                 if(IDLabel.getText().equals("valid")){
+                     IDLabel.setText("Validated");
                     try {
                         chocan.ChocAn.deleteProvider(IDNumberText.getText());
                     } catch (IOException ex) {
