@@ -586,6 +586,17 @@ public class ChocAn {
        
        serviceTotal.add(newAdd);
        
+       for (int i = 0; i < memberRecords.size(); i++) {
+            if (memberIDNumber.equals(memberRecords.get(i).getMemberIDNumber())) {
+                memberRecords.get(i).addServicesRecieved(newAdd);
+            }//end if
+        }//end for 
+       
+       for (int i = 0; i < providerRecords.size(); i++) {
+            if (providerID.equals(providerRecords.get(i).getProviderIDnumber())) {
+                providerRecords.get(i).addServiceProvided(newAdd);
+            }//end if
+        }//end for 
     }
     
 }//end ChocAn class
