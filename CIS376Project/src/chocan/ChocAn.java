@@ -751,6 +751,28 @@ public class ChocAn {
         printWr.close();
     }
 
+    /**
+     * Returns a COPY of the provider directory. NOT the actually directory itself. 
+     * I.e. You cannot make changes to the real provider directory if you make changes 
+     * to the instance this method returns. 
+     * 
+     * @return copy of the provider directory
+     */
+    public static ArrayList<Session> getProviderDirectory(){
+        ArrayList<Session> copyOfProviderDir = new ArrayList<>();
+        
+        Session tempSession;
+        
+        for(int i = 0 ; i < providerDirectory.size() ; i++){
+            tempSession = new Session();
+            tempSession.setSessionName(providerDirectory.get(i).getSessionName());
+            tempSession.setServiceCode(providerDirectory.get(i).getServiceCode());
+            tempSession.setFee(providerDirectory.get(i).getFee());
+            
+            copyOfProviderDir.add(tempSession);
+        }
   
+        return copyOfProviderDir;
+    }//end getProviderDirectory()
 
 }//end ChocAn class

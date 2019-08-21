@@ -25,6 +25,9 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
 import ProviderGUI.VerificationFormGUIController;
+import chocan.Session;
+import java.util.ArrayList;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ChocoProviderMMController implements Initializable {
 
@@ -65,14 +68,14 @@ public class ChocoProviderMMController implements Initializable {
     @FXML
     private Button VerifactionBut;
     
+@FXML
+    private TableView<Session> ServiceTable;
     @FXML
-    private TableView ServiceTable;
+    private TableColumn<Session,String> CodeTable;
     @FXML
-    private TableColumn CodeTable;
+    private TableColumn<Session,String> NameTable;
     @FXML
-    private TableColumn NameTable;
-    @FXML
-    private TableColumn Feetable;
+    private TableColumn<Session,String> Feetable;
     //grab information from gloabal Var fro chocan providerdir private static ArrayList<Session> providerDirectory = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -100,7 +103,34 @@ public class ChocoProviderMMController implements Initializable {
             CommentArea.setText(SendComment);
         }
         
+        CodeTable.setCellValueFactory(new PropertyValueFactory<>("serviceCode"));
+//        NameTable.setCellValueFactory(new PropertyValueFactory<>("sessionName"));
+        //CodeTable.setCellValueFactory(new PropertyValueFactory<>("fee"));
+        
+//        Feetable.setCellValueFactory(new PropertyValueFactory<>("fee"));
+        
+        ServiceTable.setItems(populateTable());
     }
+    
+    public ObservableList<Session> populateTable(){
+        ObservableList<Session> provDirList = FXCollections.observableArrayList();
+        
+        ArrayList<Session> copyOfProvDir = chocan.ChocAn.getProviderDirectory();
+        
+        Session tempSession;
+        
+        for(int i = 0 ; i < copyOfProvDir.size() ; i++){
+            tempSession = new Session();
+            tempSession.setSessionName(copyOfProvDir.get(i).getSessionName());
+            tempSession.setServiceCode(copyOfProvDir.get(i).getServiceCode());
+            tempSession.setFee(copyOfProvDir.get(i).getFee());
+            
+            provDirList.add(tempSession);
+            
+        }
+        
+        return provDirList;
+    }//end populateTable()
     
     @FXML
     private void handleButtonAction(ActionEvent event) {            
