@@ -728,6 +728,29 @@ public class ChocAn {
         printWr.close();
     }
 
-   
+    public static void generateProviderReport() throws FileNotFoundException {
+
+        PrintWriter printWr = new PrintWriter(new File(PROVIDER_REPORT));
+        int currWeek = generateCurrentWeek();
+
+        printWr.println("PROVIDERS");
+
+        for (int i = 0; i < providerRecords.size(); i++) {
+            printWr.println("");
+
+            printWr.println("Provider Name: " + providerRecords.get(i).getProviderName());
+            printWr.println("Provider Number: " + providerRecords.get(i).getProviderIDnumber());
+            printWr.println("Provider Street Address: " + providerRecords.get(i).getStreetAddress());
+            printWr.println("Provider City: " + providerRecords.get(i).getCity());
+            printWr.println("Provider State: " + providerRecords.get(i).getState());
+            printWr.println("Provider ZIP Code: " + providerRecords.get(i).getZipCode());
+            providerRecords.get(i).generateProviderServices(printWr, currWeek);
+        }//end for
+        printWr.println("");
+
+        printWr.close();
+    }
+
+  
 
 }//end ChocAn class

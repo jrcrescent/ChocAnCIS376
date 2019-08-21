@@ -100,7 +100,7 @@ public class Provider {
         return numberAsString;
     }//end getTotalNumConsultations()
 
-    public void generateMemberServices(PrintWriter printWr, int currWeek) {
+    public void generateProviderServices(PrintWriter printWr, int currWeek) {
 
         printWr.println("PROVIDER SERVICE SUMMARY FOR WEEK " + currWeek);
         int servFeeTotal = 0;
