@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 /** Stores all information relating to a single member
  * @author Hristo Bonev */
-public class MemberRecord {
+public class Member {
     private String memberName;
     private String memberIDnumber;   //not an int because it can have leading 0s
     private String memberStatus;
@@ -11,9 +11,9 @@ public class MemberRecord {
     private String city;
     private String state;
     private String zipCode;          //not an int because it can have leading 0s
-    private ArrayList<ServiceReceived> servicesReceived;
+    private ArrayList<Service> servicesReceived;
     
-    MemberRecord(){
+    Member(){
         memberName = "";
         memberIDnumber = "";
         memberStatus = "";
@@ -24,9 +24,9 @@ public class MemberRecord {
         servicesReceived = new ArrayList<>();
     }//end default c-tor
     
-    MemberRecord(String memberName, String memberIDnumber, String memberStatus,
+    Member(String memberName, String memberIDnumber, String memberStatus,
                  String streetAddress, String city, String state, String zipCode,
-                 ArrayList<ServiceReceived> servicesReceived){
+                 ArrayList<Service> servicesReceived){
         this.memberName = memberName;
         this.memberIDnumber = memberIDnumber;
         this.memberStatus = memberStatus;
@@ -93,10 +93,11 @@ public class MemberRecord {
         return zipCode;
     }//end getZipCode()
     
+    
     @Override
     public String toString(){    
         return memberName + "," + memberIDnumber + "," + memberStatus + "," +
                streetAddress + "," + city + "," + state + "," + zipCode ;
     }//end toString()
     
-}//end MemberRecord Class
+}//end Member Class

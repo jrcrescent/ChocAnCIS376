@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /** Stores all information relating to providers
  * @author Hristo Bonev */
-public class ProviderRecord {
+public class Provider {
 
     private String providerName;
     private String providerIDnumber; //not an int because it can have leading 0s
@@ -12,9 +12,9 @@ public class ProviderRecord {
     private String city;
     private String state;
     private String zipCode;          //not an int because it can have leading 0s
-    private ArrayList<ServiceProvided> servicesProvided;
+    private ArrayList<Service> servicesProvided;
 
-    ProviderRecord() {
+    Provider() {
         this.providerName = "";
         this.providerIDnumber = "";
         this.streetAddress = "";
@@ -24,8 +24,8 @@ public class ProviderRecord {
         this.servicesProvided = new ArrayList<>();
     }//end default c-tor
 
-    ProviderRecord(String providerName, String providerIDnumber, String streetAddress,
-            String city, String state, String zipCode, ArrayList<ServiceProvided> servicesProvided) {
+    Provider(String providerName, String providerIDnumber, String streetAddress,
+            String city, String state, String zipCode, ArrayList<Service> servicesProvided) {
         this.providerName = providerName;
         this.providerIDnumber = providerIDnumber;
         this.streetAddress = streetAddress;
@@ -105,4 +105,4 @@ public class ProviderRecord {
         + "," + city + "," + state + "," + zipCode;
     }
 
-}//end ProviderRecord
+}//end Provider

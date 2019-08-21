@@ -8,6 +8,7 @@ package ProviderGUI;
 import OperatorGUI.OperatorMMController;
 import java.io.IOException;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,7 +49,8 @@ public class VerificationFormGUIController implements Initializable {
     @FXML
     private CheckBox VerifyBox;
     @FXML
-    private Label label;
+    private Label label;   
+    private static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ProviderID.setText(ChocoMemberIDController.SendProviderID);
@@ -56,8 +58,9 @@ public class VerificationFormGUIController implements Initializable {
         ServiceCode.setText(ChocoProviderMMController.SendServiceCode);
         ServiceName.setText(ChocoProviderMMController.SendServiceName);
         ServiceFee.setText(ChocoProviderMMController.SendServiceFee);
-        ServiceDate.setText(java.time.LocalDate.now().toString());
-        CurrentDate.setText(java.time.LocalDate.now().toString());
+       
+        ServiceDate.setText(java.time.LocalDateTime.now().format(formatter));
+        CurrentDate.setText(java.time.LocalDateTime.now().format(formatter));
         
     }    
     @FXML

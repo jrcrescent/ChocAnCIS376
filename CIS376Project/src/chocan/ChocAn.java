@@ -25,11 +25,13 @@ public class ChocAn {
 
     /*The provider input file is stored in this data structure.
       Each provider and his info are stored at a separate index.*/
-    private static ArrayList<ProviderRecord> providerRecords = new ArrayList<>();
+    private static ArrayList<Provider> providerRecords = new ArrayList<>();
 
     /*The member input file is stored in this data structure.
       Each member and his info are stored at a separate index.*/
-    private static ArrayList<MemberRecord> memberRecords = new ArrayList<>();
+    private static ArrayList<Member> memberRecords = new ArrayList<>();
+    
+    private static ArrayList<Service> serviceTotal = new ArrayList<>();
 
     private static Scanner scan;        //to read input file(s)
     private static PrintWriter printWr; //writes to output file(s)
@@ -80,8 +82,8 @@ public class ChocAn {
                   tokenizedLine[5] = zip code */
                 String[] tokenizedLine = tempLine.split(",");
 
-                //creating a temp ProviderRecord object
-                ProviderRecord tempRecord = new ProviderRecord();
+                //creating a temp Provider object
+                Provider tempRecord = new Provider();
 
                 //initializes all data fields of the tempRecord object
                 tempRecord.setProviderName(tokenizedLine[0]);
@@ -117,8 +119,8 @@ public class ChocAn {
                   tokenizedLine[6] = member's zip code*/
                 String[] tokenizedLine = tempLine.split(",");
 
-                //creating a temp MemberRecord object
-                MemberRecord tempRecord = new MemberRecord();
+                //creating a temp Member object
+                Member tempRecord = new Member();
 
                 //initializes all data fields of the tempRecord object
                 tempRecord.setMemberName(tokenizedLine[0]);
@@ -352,7 +354,7 @@ public class ChocAn {
             returnMssg = "Error! Member name is too long!";
         }
         else {
-            MemberRecord tempMember = new MemberRecord();
+            Member tempMember = new Member();
         
             tempMember.setMemberName(tokenizedLine[0]);
             tempMember.setMemberIDNumber(tokenizedLine[1]);
@@ -393,7 +395,7 @@ public class ChocAn {
             returnMssg = "Error! Provider name is too long!";
         }
         else {
-            ProviderRecord tempProvider = new ProviderRecord();
+            Provider tempProvider = new Provider();
         
             tempProvider.setProviderName(tokenizedLine[0]);
             tempProvider.setProviderIDnumber(tokenizedLine[1]);
@@ -573,5 +575,17 @@ public class ChocAn {
         
         return status;
     }//end update_Member_Provider
+    
+    public static void serviceInformation(String currentDateTime, String dateServiceProvided,
+            String memberIDNumber, Session session,
+            String comments, String providerID)
+    {
+       Service newAdd = new Service(currentDateTime, dateServiceProvided,
+            memberIDNumber, session,
+            comments, providerID);
+       
+       serviceTotal.add(newAdd);
+       
+    }
     
 }//end ChocAn class
