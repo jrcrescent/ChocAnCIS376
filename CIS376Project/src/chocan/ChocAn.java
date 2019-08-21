@@ -588,13 +588,13 @@ public class ChocAn {
        
        for (int i = 0; i < memberRecords.size(); i++) {
             if (memberIDNumber.equals(memberRecords.get(i).getMemberIDNumber())) {
-                memberRecords.get(i).addServicesRecieved(newAdd);
+                memberRecords.get(i).addServicesReceived(newAdd);
             }//end if
         }//end for 
        
        for (int i = 0; i < providerRecords.size(); i++) {
             if (providerID.equals(providerRecords.get(i).getProviderIDnumber())) {
-                providerRecords.get(i).addServiceProvided(newAdd);
+                providerRecords.get(i).addServicesProvided(newAdd);
             }//end if
         }//end for 
     }

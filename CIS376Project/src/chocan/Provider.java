@@ -99,6 +99,16 @@ public class Provider {
         return weeklyFee;
     }//end getTotalWeeklyFee();
     
+    public void addServicesProvided(Service service)
+    {
+        this.servicesProvided.add(service);
+    }//end addServicesReceived()
+    
+    public ArrayList<Service> getServicesRecieved()
+    {
+        return servicesProvided;
+    }//end getServicesRecieved
+    
     @Override
     public String toString(){
         return providerName + "," + providerIDnumber + "," + streetAddress

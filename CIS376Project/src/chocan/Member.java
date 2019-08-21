@@ -93,10 +93,15 @@ public class Member {
         return zipCode;
     }//end getZipCode()
     
-    public void addServicesRecieved(Service service)
+    public void addServicesReceived(Service service)
     {
         this.servicesReceived.add(service);
-    }//end addServicesRecieved()
+    }//end addServicesReceived()
+    
+    public ArrayList<Service> getServicesRecieved()
+    {
+        return servicesReceived;
+    }//end getServicesRecieved
     
     @Override
     public String toString(){    
