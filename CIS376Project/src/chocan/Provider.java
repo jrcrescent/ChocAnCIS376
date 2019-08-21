@@ -122,7 +122,6 @@ public class Provider {
 
         printWr.println("");
 
-        printWr.close();
 
     }
 

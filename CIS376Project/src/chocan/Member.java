@@ -135,9 +135,7 @@ public class Member {
             } // end if
         }//end for
         printWr.println("");
-
-        printWr.close();
-
+    
     }
 
     @Override

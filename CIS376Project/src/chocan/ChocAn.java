@@ -23,11 +23,8 @@ public class ChocAn {
     private static final String MEMBERS_INPUT_FILE_NAME = "membersDataCenter.txt";
     private static final String PROVIDERS_INPUT_FILE_NAME = "providersDataCenter.txt";
     private static final String TOTAL_SERVICES_OUTPUT = "servicesForWeek.txt";
-        private static final String MEMBER_REPORT = "memberReport.txt";
-                private static final String PROVIDER_REPORT = "providerReport.txt";
-
-
-
+    private static final String MEMBER_REPORT = "memberReport.txt";
+    private static final String PROVIDER_REPORT = "providerReport.txt";
 
     /*The provider directory input file is stored in this data structure. 
       Each line of the input file is stored at a separate index.*/
@@ -606,36 +603,30 @@ public class ChocAn {
         return status;
     }//end update_Member_Provider
 
-    public static String getProviderNameFromCode(String providerID)
-    {
+    public static String getProviderNameFromCode(String providerID) {
         String name = "";
-        for (int i = 0; i < providerRecords.size(); i++)
-        {
-            if (providerID == providerRecords.get(i).getProviderIDnumber())
-            {
+        for (int i = 0; i < providerRecords.size(); i++) {
+            if (providerID == providerRecords.get(i).getProviderIDnumber()) {
                 name = providerRecords.get(i).getProviderIDnumber();
                 break;
             }
         }
-                
+
         return name;
     }
-    
-    public static String getMemberNameFromCode(String memberID)
-    {
+
+    public static String getMemberNameFromCode(String memberID) {
         String name = "";
-        for (int i = 0; i < memberRecords.size(); i++)
-        {
-            if (memberID == memberRecords.get(i).getMemberIDNumber())
-            {
+        for (int i = 0; i < memberRecords.size(); i++) {
+            if (memberID == memberRecords.get(i).getMemberIDNumber()) {
                 name = memberRecords.get(i).getMemberIDNumber();
                 break;
             }
         }
-                
+
         return name;
     }
-    
+
     /**
      * Adds to 3 service lists once the verification form is accepted *
      *
@@ -670,6 +661,7 @@ public class ChocAn {
 
     /**
      * When called, this will write the servicesTotal to a file.
+     *
      * @throws java.io.FileNotFoundException
      */
     public static void generateAllServicesForWeek() throws FileNotFoundException {
@@ -678,7 +670,7 @@ public class ChocAn {
         int servFeeTotal = 0;
         int currWeek = generateCurrentWeek();
 
-        printWr.println("SEVICES DELIVERED DURING WEEK" + currWeek);
+        printWr.println("SEVICES DELIVERED DURING WEEK " + currWeek);
 
         for (int i = 0; i < serviceTotal.size(); i++) {
             if (currWeek == serviceTotal.get(i).getWeek()) {
@@ -689,7 +681,7 @@ public class ChocAn {
                 printWr.println("Member number: " + serviceTotal.get(i).getMemberIDNumber());
                 printWr.println("Service Code: " + serviceTotal.get(i).getSession().getServiceCode());
                 servFeeTotal += serviceTotal.get(i).getSession().getFee();
-              
+
             } // end if
         }//end for
         printWr.println("");
@@ -712,35 +704,30 @@ public class ChocAn {
 
         return week;
     }
-    
-    public static void generateMemberReport()
-    {
-    
-         PrintWriter printWr = new PrintWriter(new File(TOTAL_SERVICES_OUTPUT));
-        int servFeeTotal = 0;
+
+    public static void generateMemberReport() throws FileNotFoundException {
+
+        PrintWriter printWr = new PrintWriter(new File(MEMBER_REPORT));
         int currWeek = generateCurrentWeek();
 
-        printWr.println("SEVICES DELIVERED DURING WEEK" + currWeek);
+        printWr.println("MEMBERS");
 
-        for (int i = 0; i < serviceTotal.size(); i++) {
-            if (currWeek == serviceTotal.get(i).getWeek()) {
-                printWr.println("");
-                printWr.println("Current date and time: " + serviceTotal.get(i).getCurrentDateTime());
-                printWr.println("Date service was provided: " + serviceTotal.get(i).getDateServiceProvided());
-                printWr.println("Provider number: " + serviceTotal.get(i).getProviderIDNumber());
-                printWr.println("Member number: " + serviceTotal.get(i).getMemberIDNumber());
-                printWr.println("Service Code: " + serviceTotal.get(i).getSession().getServiceCode());
-                servFeeTotal += serviceTotal.get(i).getSession().getFee();
-              
-            } // end if
+        for (int i = 0; i < memberRecords.size(); i++) {
+            printWr.println("");
+
+            printWr.println("Member Name: " + memberRecords.get(i).getMemberName());
+            printWr.println("Member Number: " + memberRecords.get(i).getMemberIDNumber());
+            printWr.println("Member Street Address: " + memberRecords.get(i).getStreetAddress());
+            printWr.println("Member City: " + memberRecords.get(i).getCity());
+            printWr.println("Member State: " + memberRecords.get(i).getState());
+            printWr.println("Member ZIP Code: " + memberRecords.get(i).getZipCode());
+            memberRecords.get(i).generateMemberServices(printWr, currWeek);
         }//end for
         printWr.println("");
-        printWr.println("Total Fee: " + servFeeTotal);
 
         printWr.close();
     }
-    
-    
-    
+
    
+
 }//end ChocAn class
