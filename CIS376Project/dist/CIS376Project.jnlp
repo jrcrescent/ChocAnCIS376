@@ -8,7 +8,19 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="CIS376Project.jar" size="35102" download="eager" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <jar href="CIS376Project.jar" size="36715" download="eager" />
+=======
+    <jar href="CIS376Project.jar" size="35985" download="eager" />
+>>>>>>> 62756dd0c8dd217284c53b1a828d3d4384dbe7bb
+=======
+    <jar href="CIS376Project.jar" size="35985" download="eager" />
+>>>>>>> 62756dd0c8dd217284c53b1a828d3d4384dbe7bb
+=======
+    <jar href="CIS376Project.jar" size="35985" download="eager" />
+>>>>>>> 62756dd0c8dd217284c53b1a828d3d4384dbe7bb
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="CIS376Project" >
     <param name="requiredFXVersion" value="8.0+"/>

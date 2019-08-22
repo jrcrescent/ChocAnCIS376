@@ -3,11 +3,9 @@ Thor Almighty,589658740,Validated,226 Pineknoll Ave.,Mcminnville,TN,37110
 Capitano Mericano,001122334,Validated,45 Newcastle Road,Brookline,MA,02446
 Tim Hamburgen,030485987,Member suspended,176 Glen Creek Ave.,Chicago Heights,IL,60411
 Belly Burmington,957515350,Validated,7468 Wild Horse Court,Hamburh,NY,14075
-Rossy Rosset,010203040,Member suspended,115 Roberts Street,Henderson,KY,42420
 Donald Duckgton,821311585,Validated,8213 Court Court,Cambridge,MA,02138
 Hantonio Asparuh,141516147,Validated,8242 West Cross Ave.,Carol Stream,IL,60188
 Steiny Bobson,589632560,Validated,207 Gartner Lane,Granger,IN,46530
-Zaid Jessrosen,777888999,Member suspended,519 Myrtle Dr.,Green Bay,WI,54302
 Maxx Hristopher,002003895,Validated,53 Orange Lange,Crystal Lake,IL,60014
 Imag Drago,665667691,Validated,293 Gonzales St.,Monroeville,PA,15146
 Aaron Strongborn,332255484,Validated,38 St. Margarets Lane,Cherry Hill,NJ,08003

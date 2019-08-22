@@ -53,7 +53,9 @@ public class AddMemberGUIController implements Initializable {
         if(MorPUser=="Member"){
             IDText.setText(chocan.ChocAn.generateIDnumber('m'));
         }else{
-          IDText.setText(chocan.ChocAn.generateIDnumber('p'));  
+          IDText.setText(chocan.ChocAn.generateIDnumber('p')); 
+          VerifyBox.setText("Bank Information");
+
         }
     }    
     
@@ -89,8 +91,17 @@ public class AddMemberGUIController implements Initializable {
                     Logger.getLogger(AddMemberGUIController.class.getName()).log(Level.SEVERE, null, ex);
                 }                
             }
-
-            
+            try{
+                Parent  root = FXMLLoader.load(getClass().getResource("OperatorMM.fxml"));
+                Scene Forgot_scene = new Scene(root);
+                Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene.setScene(Forgot_scene);
+                scene.setTitle("Main Menu");
+                scene.show();
+            }
+            catch (IOException ex) {
+                Logger.getLogger(OperatorMMController.class.getName()).log(Level.SEVERE, null, ex);
+            }     
         }else{
             VerifyLabel.setText("Box not checked");
         }
