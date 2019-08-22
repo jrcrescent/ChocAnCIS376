@@ -53,6 +53,9 @@ public class UpdateOperatorGUIController implements Initializable {
     String ConString;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        if(MorPUser.equals("Provider")){
+            VerifyBox.setText("Bank Information");
+        }
     }    
     
     @FXML
@@ -73,7 +76,7 @@ public class UpdateOperatorGUIController implements Initializable {
     private void GetInfoAction(ActionEvent event){
         if(MorPUser.equals("Member")){
             IDLabel.setText(chocan.ChocAn.verifyMemberIDNumber(NumberIDText.getText()));
-            if(IDLabel.getText().equals("Validated")){
+            if(IDLabel.getText().equals("Validated")||IDLabel.getText().equals("Member suspended")){
                ConName=chocan.ChocAn.getConcatStringFromID(NumberIDText.getText(), 'm');
                 System.out.println(ConName);
                 

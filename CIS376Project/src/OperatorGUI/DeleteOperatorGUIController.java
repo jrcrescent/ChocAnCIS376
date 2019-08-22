@@ -60,8 +60,19 @@ public class DeleteOperatorGUIController implements Initializable {
             if(MorPUser.equals("Member")){
                 try {
                     IDLabel.setText(chocan.ChocAn.verifyMemberIDNumber(IDNumberText.getText()));
-                    if(IDLabel.getText().equals("Validated")){
+                    if(IDLabel.getText().equals("Validated") || IDLabel.getText().equals("Member suspended")){
                         chocan.ChocAn.deleteMember(IDNumberText.getText());
+                        try{
+                            Parent  root = FXMLLoader.load(getClass().getResource("OperatorMM.fxml"));
+                                Scene Forgot_scene = new Scene(root);
+                                Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                                scene.setScene(Forgot_scene);
+                                scene.setTitle("Main Menu");
+                                scene.show();
+                            }
+                            catch (IOException ex) {
+                                Logger.getLogger(OperatorMMController.class.getName()).log(Level.SEVERE, null, ex);
+                            }                        
                     }
                 } catch (IOException ex) {
                 Logger.getLogger(DeleteOperatorGUIController.class.getName()).log(Level.SEVERE, null, ex);
@@ -72,6 +83,17 @@ public class DeleteOperatorGUIController implements Initializable {
                      IDLabel.setText("Validated");
                     try {
                         chocan.ChocAn.deleteProvider(IDNumberText.getText());
+                        try{
+                            Parent  root = FXMLLoader.load(getClass().getResource("OperatorMM.fxml"));
+                                Scene Forgot_scene = new Scene(root);
+                                Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                                scene.setScene(Forgot_scene);
+                                scene.setTitle("Main Menu");
+                                scene.show();
+                            }
+                            catch (IOException ex) {
+                                Logger.getLogger(OperatorMMController.class.getName()).log(Level.SEVERE, null, ex);
+                            }                        
                     } catch (IOException ex) {
                         Logger.getLogger(DeleteOperatorGUIController.class.getName()).log(Level.SEVERE, null, ex);
                     }
