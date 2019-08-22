@@ -45,15 +45,6 @@ Member ZIP Code: 14075
 MEMBER SERVICE SUMMARY FOR WEEK 34
 
 
-Member Name: Rossy Rosset
-Member Number: 010203040
-Member Street Address: 115 Roberts Street
-Member City: Henderson
-Member State: KY
-Member ZIP Code: 42420
-MEMBER SERVICE SUMMARY FOR WEEK 34
-
-
 Member Name: Donald Duckgton
 Member Number: 821311585
 Member Street Address: 8213 Court Court
@@ -78,15 +69,6 @@ Member Street Address: 207 Gartner Lane
 Member City: Granger
 Member State: IN
 Member ZIP Code: 46530
-MEMBER SERVICE SUMMARY FOR WEEK 34
-
-
-Member Name: Zaid Jessrosen
-Member Number: 777888999
-Member Street Address: 519 Myrtle Dr.
-Member City: Green Bay
-Member State: WI
-Member ZIP Code: 54302
 MEMBER SERVICE SUMMARY FOR WEEK 34
 
 
@@ -141,6 +123,28 @@ Member Street Address: 8795 NW.Truesel St.
 Member City: Elk Grove Village
 Member State: IL
 Member ZIP Code: 60007
+MEMBER SERVICE SUMMARY FOR WEEK 34
+
+
+Member Name: Zaid Alsafi
+Member Number: 078871875
+Member Street Address: 6520 Asbury Park
+Member City: Detroit
+Member State: MI
+Member ZIP Code: 48228
+MEMBER SERVICE SUMMARY FOR WEEK 34
+
+Date service was provided: 2019-08-21T23:45:02.818
+Provider name: 
+Service Code: medical diagnosis
+
+
+Member Name: Bob Ross
+Member Number: 648882471
+Member Street Address: 6520 Asbury Park
+Member City: Detroit
+Member State: Michigan
+Member ZIP Code: 48228
 MEMBER SERVICE SUMMARY FOR WEEK 34
 
 

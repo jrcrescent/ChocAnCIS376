@@ -53,7 +53,19 @@ public class ChocoMemberIDController implements Initializable {
             }  
         }
     }
-    
+    @FXML
+    private  void BackToMainMenu(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/cis376project/JavaMainMenu.fxml"));
+            Scene Login_scene = new Scene(root);
+            Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene.setScene(Login_scene);
+            scene.setTitle("Main Menu");
+            scene.show();
+        }catch (IOException ex) {
+            Logger.getLogger(cis376project.JavaMainMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

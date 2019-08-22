@@ -14,9 +14,10 @@ public class CIS376Project extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/ProviderGUI/ChocoMemberID.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/ProviderGUI/ChocoMemberID.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("/OperatorGUI/OperatorMM.fxml"));
-
+        //Parent root = FXMLLoader.load(getClass().getResource("/ManagerGUI/ManagerMM.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("JavaMainMenu.fxml"));
         Scene scene = new Scene(root);
 
         stage.setScene(scene);

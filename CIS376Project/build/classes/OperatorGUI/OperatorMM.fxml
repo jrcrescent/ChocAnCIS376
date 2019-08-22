@@ -57,5 +57,10 @@
             </Button>
          </children>
       </AnchorPane>
+      <Button layoutX="19.0" layoutY="8.0" mnemonicParsing="false" onAction="#BackToMainMenu" prefHeight="63.0" prefWidth="98.0" text="Back">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,9 +1,9 @@
 SEVICES DELIVERED DURING WEEK 34
 
-Current date and time: 2019-08-21T21:34:48.182
-Date service was provided: 2019-08-21T21:34:48.18
-Provider number: 323635320
-Member number: 648882471
-Service Code: 883948
+Current date and time: 2019-08-21T23:45:02.82
+Date service was provided: 2019-08-21T23:45:02.818
+Provider number: 648882471
+Member number: 078871875
+Service Code: 125785
 
-Total Fee: 20
+Total Fee: 29
