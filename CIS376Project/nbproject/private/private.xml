@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Desktop/To%20be%20merged/ChocAnCIS376/CIS376Project/src/chocan/ChocAn.java</file>
-            <file>file:/D:/Desktop/To%20be%20merged/ChocAnCIS376/CIS376Project/src/ProviderGUI/ChocoProviderMMController.java</file>
-            <file>file:/D:/Desktop/To%20be%20merged/ChocAnCIS376/CIS376Project/src/cis376project/CIS376Project.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/OperatorGUI/OperatorMMController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/cis376project/JavaMainMenuController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/chocan/ChocAn.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/cis376project/JavaMainMenu.fxml</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/OperatorGUI/AddMemberGUI.fxml</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/ManagerGUI/ManagerMMController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/ProviderGUI/ChocoProviderMM.fxml</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/ProviderGUI/ChocoProviderMMController.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/chocan/Member.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/cis376project/CIS376Project.java</file>
+            <file>file:/C:/Users/Fallenanimes/PycharmProjects/GenomeProject/ChocAnCIS376/CIS376Project/src/ProviderGUI/ChocoMemberIDController.java</file>
         </group>
     </open-files>
 </project-private>
