@@ -667,7 +667,7 @@ public class ChocAn {
     public static void generateAllServicesForWeek() throws FileNotFoundException {
 
         PrintWriter printWr = new PrintWriter(new File(TOTAL_SERVICES_OUTPUT));
-        int servFeeTotal = 0;
+        double servFeeTotal = 0;
         int currWeek = generateCurrentWeek();
 
         printWr.println("SEVICES DELIVERED DURING WEEK " + currWeek);

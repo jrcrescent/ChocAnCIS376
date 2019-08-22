@@ -103,7 +103,7 @@ public class Provider {
     public void generateProviderServices(PrintWriter printWr, int currWeek) {
 
         printWr.println("PROVIDER SERVICE SUMMARY FOR WEEK " + currWeek);
-        int servFeeTotal = 0;
+        double servFeeTotal = 0;
         for (int i = 0; i < servicesProvided.size(); i++) {
             if (currWeek == servicesProvided.get(i).getWeek()) {
                 printWr.println("");
