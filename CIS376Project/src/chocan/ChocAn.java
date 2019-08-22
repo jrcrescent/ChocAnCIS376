@@ -680,6 +680,7 @@ public class ChocAn {
                 printWr.println("Provider number: " + serviceTotal.get(i).getProviderIDNumber());
                 printWr.println("Member number: " + serviceTotal.get(i).getMemberIDNumber());
                 printWr.println("Service Code: " + serviceTotal.get(i).getSession().getServiceCode());
+                printWr.println("Comment: " + serviceTotal.get(i).getComments());
                 servFeeTotal += serviceTotal.get(i).getSession().getFee();
 
             } // end if
