@@ -8,12 +8,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="443.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OperatorGUI.OperatorMMController">
    <children>
-      <Label layoutY="-6.0" prefHeight="91.0" prefWidth="638.0" style="-fx-background-color: c0f0c0;" text="              Chocoholics Anonymous" textAlignment="JUSTIFY">
+      <Label layoutY="-6.0" prefHeight="91.0" prefWidth="638.0" style="-fx-background-color: #3FE0D0;" text="              Chocoholics Anonymous" textAlignment="JUSTIFY">
          <font>
             <Font name="Times New Roman Bold" size="36.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="19.0" layoutY="102.0" prefHeight="319.0" prefWidth="600.0" style="-fx-background-color: c0f0c0;">
+      <AnchorPane layoutX="19.0" layoutY="102.0" prefHeight="319.0" prefWidth="600.0" style="-fx-background-color: #3FE0D0;">
          <children>
             <Button layoutX="376.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="72.0" prefWidth="175.0" text="Add Provider">
                <font>
@@ -57,7 +57,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button layoutX="19.0" layoutY="8.0" mnemonicParsing="false" onAction="#BackToMainMenu" prefHeight="63.0" prefWidth="98.0" text="Back">
+      <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#BackToMainMenu" prefHeight="63.0" prefWidth="98.0" text="Back">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

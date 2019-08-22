@@ -47,7 +47,7 @@ public class ManagerMMController implements Initializable {
     private void ManagerReportAction(ActionEvent event){
         try {
             chocan.ChocAn.generateAllServicesForWeek();
-            ManagerLabel.setText("Fee Report Created");
+            ManagerLabel.setText("Manager Report Created");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ManagerMMController.class.getName()).log(Level.SEVERE, null, ex);
         }

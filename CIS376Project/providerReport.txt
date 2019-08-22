@@ -7,15 +7,8 @@ Provider City: Kalispell
 Provider State: MT
 Provider ZIP Code: 59901
 PROVIDER SERVICE SUMMARY FOR WEEK 34
-
-Date of service: 2019-08-22T00:11:34.638
-Recieved by Computer: 2019-08-22T00:11:34.641
-Member name: Kelly Fish
-Member number: 112358132
-Service Code: 598470
-Fee to be paid: 25.99
-Total consultations: 001
-Total fee for week: 25
+Total consultations: 000
+Total fee for week: 0
 
 
 Provider Name: Becca Rebecca

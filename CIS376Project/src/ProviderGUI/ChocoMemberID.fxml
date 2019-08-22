@@ -6,15 +6,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="116.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProviderGUI.ChocoMemberIDController">
+<AnchorPane id="AnchorPane" prefHeight="171.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProviderGUI.ChocoMemberIDController">
     <children>
-      <TextField fx:id="ProviderInformation" layoutX="86.0" layoutY="48.0" />
-        <Button fx:id="button" layoutX="235.0" layoutY="48.0" onAction="#handleButtonAction" text="Enter" />
-        <Label fx:id="label" layoutX="14.0" layoutY="31.0" minHeight="16" minWidth="69" prefHeight="17.0" prefWidth="267.0" />
-      <Label layoutX="14.0" layoutY="52.0" text="Provider ID:" />
-      <Button layoutX="6.0" layoutY="8.0" mnemonicParsing="false" onAction="#BackToMainMenu" prefHeight="25.0" prefWidth="62.0" text="Back">
+      <TextField fx:id="ProviderInformation" layoutX="175.0" layoutY="117.0" promptText="123456789" />
+        <Button fx:id="button" layoutX="324.0" layoutY="117.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="42.0" text="Enter">
          <font>
             <Font name="Times New Roman" size="12.0" />
+         </font></Button>
+        <Label fx:id="label" layoutX="99.0" layoutY="100.0" minHeight="16" minWidth="69" prefHeight="17.0" prefWidth="267.0">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font></Label>
+      <Label layoutX="113.0" layoutY="121.0" prefHeight="17.0" prefWidth="62.0" text="Provider ID:">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font></Label>
+      <Label prefHeight="91.0" prefWidth="499.0" style="-fx-background-color: #3FE0D0;" text="            Chocoholics Anonymous" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Times New Roman Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button cancelButton="true" layoutY="19.0" mnemonicParsing="false" onAction="#BackToMainMenu" prefHeight="53.0" prefWidth="94.0" text="Back">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
     </children>
