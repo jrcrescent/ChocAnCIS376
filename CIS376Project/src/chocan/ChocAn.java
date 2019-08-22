@@ -606,8 +606,8 @@ public class ChocAn {
     public static String getProviderNameFromCode(String providerID) {
         String name = "";
         for (int i = 0; i < providerRecords.size(); i++) {
-            if (providerID == providerRecords.get(i).getProviderIDnumber()) {
-                name = providerRecords.get(i).getProviderIDnumber();
+            if (providerID.equals(providerRecords.get(i).getProviderIDnumber())) {
+                name = providerRecords.get(i).getProviderName();
                 break;
             }
         }
@@ -618,8 +618,8 @@ public class ChocAn {
     public static String getMemberNameFromCode(String memberID) {
         String name = "";
         for (int i = 0; i < memberRecords.size(); i++) {
-            if (memberID == memberRecords.get(i).getMemberIDNumber()) {
-                name = memberRecords.get(i).getMemberIDNumber();
+            if (memberID.equals(memberRecords.get(i).getMemberIDNumber())) {
+                name = memberRecords.get(i).getMemberName();
                 break;
             }
         }

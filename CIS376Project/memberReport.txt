@@ -8,6 +8,10 @@ Member State: NY
 Member ZIP Code: 10012
 MEMBER SERVICE SUMMARY FOR WEEK 34
 
+Date service was provided: 2019-08-22T00:11:34.638
+Provider name: Alistair Starbreaker
+Service Code: dietitian session
+
 
 Member Name: Thor Almighty
 Member Number: 589658740
@@ -133,10 +137,6 @@ Member City: Detroit
 Member State: MI
 Member ZIP Code: 48228
 MEMBER SERVICE SUMMARY FOR WEEK 34
-
-Date service was provided: 2019-08-21T23:45:02.818
-Provider name: 
-Service Code: medical diagnosis
 
 
 Member Name: Bob Ross
