@@ -11,5 +11,4 @@ Liam Worenski,478521596,7774 Carriage Street,Rockville,MD,20850
 Ronnie Ronalds,485859572,7789 Johnson Drive,Yorktown Heights,NY,10598
 Gary Vee,495856520,50 Amherst Street,Union City,NJ,07087
 Caitlyn Lee,415689588,98 Military Street,Monsey,NY,10952
-Euan Birdmington,323635320,9515 Corona Road,Munster,IN,46321
-Zaid Alsafi,012122028,Dick,Divk,COCK,48228
+Euan Birdmington,648882471,9515 Corona Road,Munster,IN,46321

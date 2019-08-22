@@ -75,7 +75,7 @@ public class ChocoProviderMMController implements Initializable {
     @FXML
     private TableColumn<Session,String> NameTable;
     @FXML
-    private TableColumn<Session,String> Feetable;
+    private TableColumn<Session,String> FeeTable;
     //grab information from gloabal Var fro chocan providerdir private static ArrayList<Session> providerDirectory = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -104,8 +104,8 @@ public class ChocoProviderMMController implements Initializable {
         }
         
         CodeTable.setCellValueFactory(new PropertyValueFactory<>("serviceCode"));
-//        NameTable.setCellValueFactory(new PropertyValueFactory<>("sessionName"));
-        //CodeTable.setCellValueFactory(new PropertyValueFactory<>("fee"));
+        FeeTable.setCellValueFactory(new PropertyValueFactory<>("fee"));
+        NameTable.setCellValueFactory(new PropertyValueFactory<>("sessionName"));
         
 //        Feetable.setCellValueFactory(new PropertyValueFactory<>("fee"));
         
