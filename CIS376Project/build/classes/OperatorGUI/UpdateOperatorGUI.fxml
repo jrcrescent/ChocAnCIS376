@@ -18,7 +18,7 @@
          <children>
             <TextField fx:id="NumberIDText" layoutX="83.0" layoutY="33.0" />
             <Label layoutX="21.0" layoutY="37.0" text="ID Number:" />
-            <Button layoutX="232.0" layoutY="33.0" mnemonicParsing="false" onAction="#GetInfoAction" text="Button" />
+            <Button layoutX="232.0" layoutY="33.0" mnemonicParsing="false" onAction="#GetInfoAction" text="Enter" />
             <Label fx:id="IDLabel" layoutX="83.0" layoutY="14.0" prefHeight="17.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
