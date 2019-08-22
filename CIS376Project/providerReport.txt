@@ -8,7 +8,7 @@ Provider State: MT
 Provider ZIP Code: 59901
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Becca Rebecca
@@ -19,7 +19,7 @@ Provider State: WV
 Provider ZIP Code: 25801
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Luke Groundwalker
@@ -30,7 +30,7 @@ Provider State: MA
 Provider ZIP Code: 01844
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Laura Lorrison
@@ -41,7 +41,7 @@ Provider State: NJ
 Provider ZIP Code: 07960
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Jimmy John
@@ -52,7 +52,7 @@ Provider State: VA
 Provider ZIP Code: 20120
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Haris Paris
@@ -63,7 +63,7 @@ Provider State: SD
 Provider ZIP Code: 57103
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Ibrahim Linkdhome
@@ -74,7 +74,7 @@ Provider State: MO
 Provider ZIP Code: 63109
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Sky Kyler
@@ -85,7 +85,7 @@ Provider State: TN
 Provider ZIP Code: 37312
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Laurence Lovely
@@ -96,7 +96,7 @@ Provider State: PA
 Provider ZIP Code: 19067
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Liam Worenski
@@ -107,7 +107,7 @@ Provider State: MD
 Provider ZIP Code: 20850
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Ronnie Ronalds
@@ -118,7 +118,7 @@ Provider State: NY
 Provider ZIP Code: 10598
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Gary Vee
@@ -129,7 +129,7 @@ Provider State: NJ
 Provider ZIP Code: 07087
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Caitlyn Lee
@@ -140,7 +140,7 @@ Provider State: NY
 Provider ZIP Code: 10952
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 
 Provider Name: Euan Birdmington
@@ -151,6 +151,6 @@ Provider State: IN
 Provider ZIP Code: 46321
 PROVIDER SERVICE SUMMARY FOR WEEK 34
 Total consultations: 000
-Total fee for week: 0
+Total fee for week: 0.0
 
 

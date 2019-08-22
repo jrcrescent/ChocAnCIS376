@@ -15,36 +15,36 @@ public class Session {
         sessionName = "";
         serviceCode = "";
         fee = 0.0;
-    }//default c-tor
+    }
 
     public Session(String sessionName, String serviceCode, double fee) {
         this.sessionName = sessionName;
         this.serviceCode = serviceCode;
         this.fee = fee;
-    }//end c-tor
+    }
 
     public void setSessionName(String sessionName) {
         this.sessionName = sessionName;
-    }//end setSessionName()
-
-    public String getSessionName() {
-        return sessionName;
-    }//end getSessionName()
+    }
 
     public void setServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
-    }//end setServiceCode()
+    }
+    
+    public void setFee(double fee) {
+        this.fee = fee;
+    }
+    
+    public String getSessionName() {
+        return sessionName;
+    }
 
     public String getServiceCode() {
         return serviceCode;
-    }//end getServiceCode()
-
-    public void setFee(double fee) {
-        this.fee = fee;
-    }//end setFee()
+    }
 
     public double getFee() {
         return fee;
-    }//end getFee()
+    }
 
 }//end Session Class

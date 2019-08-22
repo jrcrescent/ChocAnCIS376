@@ -42,7 +42,6 @@ public class ChocAn {
     private static ArrayList<Service> serviceTotal = new ArrayList<>();
 
     private static Scanner scan;        //to read input file(s)
-    private static PrintWriter printWr; //writes to output file(s)
 
     public static void readProviderDirectoryInputFile() {
         try {
@@ -179,6 +178,39 @@ public class ChocAn {
     }//end verifyMemberIDNumber()
 
     /**
+     * Checks the status associated with a given member ID number.
+     *
+     * @param providerIDnumber a members ID number that needs to be validated.
+     * @return a String: "Validated" if member ID number is valid "Member
+     * suspended" if member has been suspended or an error message if entered ID
+     * was not in the proper format.
+     */
+    public static String verifyProviderIDNumber(String providerIDnumber) {
+        String status = "Invalid number";
+        String regex = "\\d+";
+
+        //checking if entered ID is 9 characters long. 
+        if (providerIDnumber.length() != 9) {
+            status = "Error! ID should be 9 integers long!";
+        }
+
+        if (!providerIDnumber.matches(regex)) {
+            status = "Error! Entered ID can consist of numbers only [1-9].";
+
+        }
+
+        //traversing through memberRecords to find if there's a matching ID
+        for (int i = 0; i < providerRecords.size(); i++) {
+            if (providerIDnumber.equals(providerRecords.get(i).getProviderIDnumber())) {
+                status = "valid";
+                break;
+            }
+        }//end for
+
+        return status;
+    }//end verifyProviderIDNumber()    
+    
+    /**
      * returns name of session from code
      *
      * @param serviceCode a session's code
@@ -223,71 +255,6 @@ public class ChocAn {
 
         return statementFee;
     } //end getSessionFeeFromCode
-
-    /**
-     * Checks the status associated with a given member ID number.
-     *
-     * @param providerIDnumber a members ID number that needs to be validated.
-     * @return a String: "Validated" if member ID number is valid "Member
-     * suspended" if member has been suspended or an error message if entered ID
-     * was not in the proper format.
-     */
-    public static String verifyProviderIDNumber(String providerIDnumber) {
-        String status = "Invalid number";
-        String regex = "\\d+";
-
-        //checking if entered ID is 9 characters long. 
-        if (providerIDnumber.length() != 9) {
-            status = "Error! ID should be 9 integers long!";
-        }
-
-        if (!providerIDnumber.matches(regex)) {
-            status = "Error! Entered ID can consist of numbers only [1-9].";
-
-        }
-
-        //traversing through memberRecords to find if there's a matching ID
-        for (int i = 0; i < providerRecords.size(); i++) {
-            if (providerIDnumber.equals(providerRecords.get(i).getProviderIDnumber())) {
-                status = "valid";
-                break;
-            }
-        }//end for
-
-        return status;
-    }//end verifyMemberIDNumber()
-
-    /**
-     * Deletes a member
-     *
-     * @param memberID the ID number of the member we're deleting
-     * @return String indicating whether the deletion was successful.
-     * @throws IOException
-     */
-    public static String deleteMember(String memberID) throws IOException {
-        String returnMessage = "Member ID not found";
-
-        boolean idFound = false;
-
-        int i;
-
-        for (i = 0; i < memberRecords.size(); i++) {
-            if (memberID.equals(memberRecords.get(i).getMemberIDNumber())) {
-                idFound = true;
-                break;
-            }
-        }
-
-        //removes the member located at index i of the ArrayList
-        if (idFound) {
-            memberRecords.remove(memberRecords.get(i));
-            returnMessage = "Member removed successfully!";
-        }
-
-        updateMembersInputFile(); //delete member from .txt file
-
-        return returnMessage;
-    }//end deleteMember()
 
     /**
      * This method generates a unique random ID number for a member / provider.
@@ -429,116 +396,7 @@ public class ChocAn {
         }
 
         return returnMssg;
-    }//end addProvider
-
-    /**
-     * This method rewrites the members input file to whatever data is stored
-     * currently in the memberRecords ArrayList.
-     *
-     * @throws FileNotFoundException
-     * @throws IOException
-     */
-    private static void updateMembersInputFile() throws FileNotFoundException, IOException {
-
-        PrintWriter printWr = new PrintWriter(new File(MEMBERS_INPUT_FILE_NAME));
-
-        //populates the new file with the new member data
-        for (int i = 0; i < memberRecords.size(); i++) {
-            printWr.println(memberRecords.get(i).toString());
-        }
-
-        printWr.close();
-
-    }//end createNewMembersInputFile()
-
-    /**
-     * Deletes a provider
-     *
-     * @param providerID the ID number of the provider we're deleting
-     * @return String indicating whether the deletion was successful.
-     * @throws IOException
-     */
-    public static String deleteProvider(String providerID) throws IOException {
-        String returnMessage = "Provider ID not found";
-
-        boolean idFound = false;
-
-        int i;
-
-        for (i = 0; i < providerRecords.size(); i++) {
-            if (providerID.equals(providerRecords.get(i).getProviderIDnumber())) {
-                idFound = true;
-                break;
-            }
-        }
-
-        //removes the member located at index i of the ArrayList
-        if (idFound) {
-            providerRecords.remove(providerRecords.get(i));
-            returnMessage = "Member removed successfully!";
-        }
-
-        updateProvidersInputFile(); //delete provider from .txt file
-
-        return returnMessage;
-    }//end deleteMember()
-
-    /**
-     * This method rewrites the providers input file to whatever data is stored
-     * currently in the providerRecords ArrayList.
-     *
-     * @throws FileNotFoundException
-     * @throws IOException
-     */
-    private static void updateProvidersInputFile() throws FileNotFoundException, IOException {
-
-        PrintWriter printWr = new PrintWriter(new File(PROVIDERS_INPUT_FILE_NAME));
-
-        //populates the new file with the new member data
-        for (int i = 0; i < providerRecords.size(); i++) {
-            printWr.println(providerRecords.get(i).toString());
-        }
-
-        printWr.close();
-
-    }//end updateProvidersInputFile()
-
-    /**
-     * Returns a comma-separated string containing all info for a
-     * member/provider.
-     *
-     * @param IDnumber the ID number that belongs to a member/provider
-     * @param m_p character that indicates if ID# belongs to member or provider
-     * @return Comma separated string that holds the current info we have
-     */
-    public static String getConcatStringFromID(String IDnumber, char m_p) {
-        String concatString = "Error! ID# not found!";
-
-        if (m_p == 'm') { //if ID number belongs to a member
-            int i;
-
-            //find which index that ID is located at
-            for (i = 0; i < memberRecords.size(); i++) {
-                if (IDnumber.equals(memberRecords.get(i).getMemberIDNumber())) {
-                    concatString = memberRecords.get(i).toString();
-                    break;
-                }
-            }
-        }//end if
-        else if (m_p == 'p') {//if ID number belongs to a provider
-            int i;
-
-            //find which index that ID is located at
-            for (i = 0; i < providerRecords.size(); i++) {
-                if (IDnumber.equals(providerRecords.get(i).getProviderIDnumber())) {
-                    concatString = providerRecords.get(i).toString();
-                    break;
-                }
-            }
-        }//end else-if
-
-        return concatString;
-    }//end getConcatStringFromID()
+    }//end addProvider()
 
     /**
      * Updates the information we have on file for a Member / Provider
@@ -601,7 +459,148 @@ public class ChocAn {
         }//end else
 
         return status;
-    }//end update_Member_Provider
+    }//end update_Member_Provider()    
+    
+    /**
+     * Deletes a member
+     *
+     * @param memberID the ID number of the member we're deleting
+     * @return String indicating whether the deletion was successful.
+     * @throws IOException
+     */
+    public static String deleteMember(String memberID) throws IOException {
+        String returnMessage = "Member ID not found";
+
+        boolean idFound = false;
+
+        int i;
+
+        for (i = 0; i < memberRecords.size(); i++) {
+            if (memberID.equals(memberRecords.get(i).getMemberIDNumber())) {
+                idFound = true;
+                break;
+            }
+        }
+
+        //removes the member located at index i of the ArrayList
+        if (idFound) {
+            memberRecords.remove(memberRecords.get(i));
+            returnMessage = "Member removed successfully!";
+        }
+
+        updateMembersInputFile(); //delete member from .txt file
+
+        return returnMessage;
+    }//end deleteMember()
+    
+    /**
+     * Deletes a provider
+     *
+     * @param providerID the ID number of the provider we're deleting
+     * @return String indicating whether the deletion was successful.
+     * @throws IOException
+     */
+    public static String deleteProvider(String providerID) throws IOException {
+        String returnMessage = "Provider ID not found";
+
+        boolean idFound = false;
+
+        int i;
+
+        for (i = 0; i < providerRecords.size(); i++) {
+            if (providerID.equals(providerRecords.get(i).getProviderIDnumber())) {
+                idFound = true;
+                break;
+            }
+        }
+
+        //removes the member located at index i of the ArrayList
+        if (idFound) {
+            providerRecords.remove(providerRecords.get(i));
+            returnMessage = "Member removed successfully!";
+        }
+
+        updateProvidersInputFile(); //delete provider from .txt file
+
+        return returnMessage;
+    }//end deleteProvider()
+
+    /**
+     * This method rewrites the members input file to whatever data is stored
+     * currently in the memberRecords ArrayList.
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    private static void updateMembersInputFile() throws FileNotFoundException, IOException {
+
+        PrintWriter printWr = new PrintWriter(new File(MEMBERS_INPUT_FILE_NAME));
+
+        //populates the new file with the new member data
+        for (int i = 0; i < memberRecords.size(); i++) {
+            printWr.println(memberRecords.get(i).toString());
+        }
+
+        printWr.close();
+
+    }//end updateMembersInputFile()    
+
+    /**
+     * This method rewrites the providers input file to whatever data is stored
+     * currently in the providerRecords ArrayList.
+     *
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    private static void updateProvidersInputFile() throws FileNotFoundException, IOException {
+
+        PrintWriter printWr = new PrintWriter(new File(PROVIDERS_INPUT_FILE_NAME));
+
+        //populates the new file with the new member data
+        for (int i = 0; i < providerRecords.size(); i++) {
+            printWr.println(providerRecords.get(i).toString());
+        }
+
+        printWr.close();
+
+    }//end updateProvidersInputFile()
+
+    /**
+     * Returns a comma-separated string containing all info for a
+     * member/provider.
+     *
+     * @param IDnumber the ID number that belongs to a member/provider
+     * @param m_p character that indicates if ID# belongs to member or provider
+     * @return Comma separated string that holds the current info we have
+     */
+    public static String getConcatStringFromID(String IDnumber, char m_p) {
+        String concatString = "Error! ID# not found!";
+
+        if (m_p == 'm') { //if ID number belongs to a member
+            int i;
+
+            //find which index that ID is located at
+            for (i = 0; i < memberRecords.size(); i++) {
+                if (IDnumber.equals(memberRecords.get(i).getMemberIDNumber())) {
+                    concatString = memberRecords.get(i).toString();
+                    break;
+                }
+            }
+        }//end if
+        else if (m_p == 'p') {//if ID number belongs to a provider
+            int i;
+
+            //find which index that ID is located at
+            for (i = 0; i < providerRecords.size(); i++) {
+                if (IDnumber.equals(providerRecords.get(i).getProviderIDnumber())) {
+                    concatString = providerRecords.get(i).toString();
+                    break;
+                }
+            }
+        }//end else-if
+
+        return concatString;
+    }//end getConcatStringFromID()
 
     public static String getProviderNameFromCode(String providerID) {
         String name = "";
@@ -613,7 +612,7 @@ public class ChocAn {
         }
 
         return name;
-    }
+    }//end getProviderNameFromCode
 
     public static String getMemberNameFromCode(String memberID) {
         String name = "";
@@ -625,7 +624,7 @@ public class ChocAn {
         }
 
         return name;
-    }
+    }//end getMemberNameFromCode()
 
     /**
      * Adds to 3 service lists once the verification form is accepted *
@@ -638,8 +637,7 @@ public class ChocAn {
      * @param providerID id of provider
      */
     public static void serviceInformation(String currentDateTime, String dateServiceProvided,
-            String memberIDNumber, Session session,
-            String comments, String providerID) {
+            String memberIDNumber, Session session, String comments, String providerID) {
         Service newAdd = new Service(currentDateTime, dateServiceProvided,
                 memberIDNumber, session,
                 comments, providerID, getMemberNameFromCode(memberIDNumber), getProviderNameFromCode(providerID));
@@ -657,7 +655,7 @@ public class ChocAn {
                 providerRecords.get(i).addServicesProvided(newAdd);
             }//end if
         }//end for 
-    }//end serviceInformation
+    }//end serviceInformation()
 
     /**
      * When called, this will write the servicesTotal to a file.
@@ -690,7 +688,7 @@ public class ChocAn {
 
         printWr.close();
 
-    }
+    }//end generateAllServicesForWeek()
 
 
     /*
@@ -727,7 +725,7 @@ public class ChocAn {
         printWr.println("");
 
         printWr.close();
-    }
+    }//end generateMemberReport()
 
     public static void generateProviderReport() throws FileNotFoundException {
 
@@ -750,7 +748,7 @@ public class ChocAn {
         printWr.println("");
 
         printWr.close();
-    }
+    }//end generateProviderReport()
 
     /**
      * Returns a COPY of the provider directory. NOT the actually directory itself. 

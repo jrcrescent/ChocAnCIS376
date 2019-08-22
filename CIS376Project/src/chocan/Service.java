@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * Represents a service that a provider has provided.
  *
- * @author Hristo Bonev Date: 08/20/2019 - 12:25 AM
+ * @author JessRose
  */
 public class Service {
 
@@ -52,36 +52,52 @@ public class Service {
         this.week = currDateTime.get(weekFields.weekOfWeekBasedYear());
     }
 
-    public String getCurrentDateTime() {
-
-        return currentDateTime;
-    }
-
     public void setCurrentDateTime(String currentDateTime) {
         this.currentDateTime = currentDateTime;
+    }
+    
+    public void setDateServiceProvided(String dateServiceProvided) {
+        this.dateServiceProvided = dateServiceProvided;
+    }
+    
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+    
+    public void setMemberIDNumber(String memberIDNumber) {
+        this.memberIDNumber = memberIDNumber;
+    }
+     
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+    
+    public void setWeek(int week) {
+        this.week = week;
+    }
+    
+    public void setProviderIDNumber(String providerIDNumber) {
+        this.providerID = providerIDNumber;
+    }
+    
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
+    } 
+    
+    public String getCurrentDateTime() {
+        return currentDateTime;
     }
 
     public String getDateServiceProvided() {
         return dateServiceProvided;
     }
 
-    public void setDateServiceProvided(String dateServiceProvided) {
-        this.dateServiceProvided = dateServiceProvided;
-    }
-
     public String getMemberName() {
         return memberName;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    } 
     public String getMemberIDNumber() {
         return memberIDNumber;
-    }
-
-    public void setMemberIDNumber(String memberIDNumber) {
-        this.memberIDNumber = memberIDNumber;
     }
 
     public Session getSession() {
@@ -92,29 +108,14 @@ public class Service {
         return comments;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
     public int getWeek() {
         return week;
-    }
-
-    public void setWeek(int week) {
-        this.week = week;
     }
 
     public String getProviderIDNumber() {
         return providerID;
     }
 
-    public void setProviderIDNumber(String providerIDNumber) {
-        this.providerID = providerIDNumber;
-    }
-    
-    public void setProviderName(String memberName) {
-        this.providerName = memberName;
-    } 
     public String getProviderName() {
         return providerName;
     }
