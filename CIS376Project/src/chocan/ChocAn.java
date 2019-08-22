@@ -606,8 +606,8 @@ public class ChocAn {
     public static String getProviderNameFromCode(String providerID) {
         String name = "";
         for (int i = 0; i < providerRecords.size(); i++) {
-            if (providerID == providerRecords.get(i).getProviderIDnumber()) {
-                name = providerRecords.get(i).getProviderIDnumber();
+            if (providerID.equals(providerRecords.get(i).getProviderIDnumber())) {
+                name = providerRecords.get(i).getProviderName();
                 break;
             }
         }
@@ -618,8 +618,8 @@ public class ChocAn {
     public static String getMemberNameFromCode(String memberID) {
         String name = "";
         for (int i = 0; i < memberRecords.size(); i++) {
-            if (memberID == memberRecords.get(i).getMemberIDNumber()) {
-                name = memberRecords.get(i).getMemberIDNumber();
+            if (memberID.equals(memberRecords.get(i).getMemberIDNumber())) {
+                name = memberRecords.get(i).getMemberName();
                 break;
             }
         }
@@ -680,6 +680,7 @@ public class ChocAn {
                 printWr.println("Provider number: " + serviceTotal.get(i).getProviderIDNumber());
                 printWr.println("Member number: " + serviceTotal.get(i).getMemberIDNumber());
                 printWr.println("Service Code: " + serviceTotal.get(i).getSession().getServiceCode());
+                printWr.println("Comment: " + serviceTotal.get(i).getComments());
                 servFeeTotal += serviceTotal.get(i).getSession().getFee();
 
             } // end if

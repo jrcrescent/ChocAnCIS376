@@ -130,7 +130,7 @@ public class Member {
                 printWr.println("");
                 printWr.println("Date service was provided: " + servicesReceived.get(i).getDateServiceProvided());
                 printWr.println("Provider name: " + servicesReceived.get(i).getProviderName());
-                printWr.println("Service Code: " + servicesReceived.get(i).getSession().getSessionName());
+                printWr.println("Service Name: " + servicesReceived.get(i).getSession().getSessionName());
 
             } // end if
         }//end for
