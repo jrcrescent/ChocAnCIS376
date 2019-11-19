@@ -211,7 +211,7 @@ public class ChocoProviderMMController implements Initializable {
     }
     
     @FXML
-    private void handleVerificationButtionAction(ActionEvent event){
+    private void handleVerificationButtonAction(ActionEvent event){
         try{
             Parent  root = FXMLLoader.load(getClass().getResource("VerificationFormGUI.fxml"));
             Scene Forgot_scene = new Scene(root);
